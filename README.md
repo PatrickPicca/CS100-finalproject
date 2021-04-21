@@ -25,7 +25,7 @@
  >   * We will use C++. Other tools will be introduced if needed. 
  > * What will be the input/output of your project?
  > Our inputs are tasks created by the user which include titles, descriptions, optional tags, priority, duration, and due dates.         
-Our outputs will be a variety of visuals specified either by the user or through the program itself based on user preference, the information the user has stored to be displayed at a later day.
+ > Our outputs will be a variety of visuals specified either by the user or through the program itself based on user preference, the information the user has stored to be displayed at a later day.
 
  > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
  >   * Why you picked this pattern and what feature you will implement with it
