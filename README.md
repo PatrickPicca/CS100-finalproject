@@ -18,18 +18,17 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include
- > * Why is it important or interesting to you?
+
  >   * The implementation of a task scheduler helps us apply our knowledge of these design patterns as well as present a world use outside of the classroom setting. 
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
+
  >   * We will use C++. Other tools will be introduced if needed. 
- > * What will be the input/output of your project?
+ 
  >   * Our inputs are tasks created by the user which include titles, descriptions, optional tags, priority, duration, and due dates.         
  >   * Our outputs will be a variety of visuals specified either by the user or through the program itself based on user preference, the information the user has stored to be displayed at a later day.
 
- > * What are the two design patterns you will be using? For each design pattern you must explain in 4-5 sentences:
- >   * The two design patterns we would use are composite pattern and strategy pattern.
-* The strategy pattern allows us to implement various strategies for prioritizing given tasks from the user, along with giving the user the freedom to output tasks in different formats. For example, the user may want to implement multiple headers under a single task or choose to create a note for a task. Using the strategy pattern, we can implement these different algorithms so that the user has the ability to customize their tasks. 
+
+>   * The two design patterns we would use are composite pattern and strategy pattern.
+>   * The strategy pattern allows us to implement various strategies for prioritizing given tasks from the user, along with giving the user the freedom to output tasks in different formats. For example, the user may want to implement multiple headers under a single task or choose to create a note for a task. Using the strategy pattern, we can implement these different algorithms so that the user has the ability to customize their tasks. 
 >   * The composite pattern allows us to implement different features to tasks. Using the composite pattern also permits the user to create subtasks, lists that include multiple tasks, as well as descriptions pertaining to specified tasks. Problems that we expect to run into include accurately composing these objects into their respected tree structures so that they are ordered exactly how the user specifies. Inaccurately displaying the hierarchy the user wants would go against the overall purpose of the task scheduler and its features.  
 
 
