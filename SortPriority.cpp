@@ -92,10 +92,9 @@ class SortPriority : public SortClass
 		virtual Filter(vector<Task> &vect, string input){
 			
 			vector<Task> tempList;
-			int priority;
 
 			for (int i = 0; i < vect.size(); i++){
-				if (vect[i].getPriority == priority)
+				if (vect[i].getPriority == input)
 					tempList.push_back(vect[i]);
 			}			
 						
