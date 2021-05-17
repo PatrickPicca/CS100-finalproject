@@ -6,20 +6,27 @@
 
 using namespace std;
 
-int main() {
+class Tasks {
+	public:
+		vector<string>taskName;
+		vector<string>taskCategory;
+		vector<string>taskDescription;
+};
 
+int main() {
+	Tasks myTask;
 	ifstream infile;
 
 	string name;
 	string category;
 	string description;
 
-	vector<string>nameV;
-	vector<string>categoryV;
-	vector<string>descriptionV;
+//	vector<string>nameV;
+//	vector<string>categoryV;
+//	vector<string>descriptionV;
 	int i = 0;
 
-	infile.open (“Tasks.txt”);
+	infile.open(“Tasks.txt”);
 
 	if (!infile){ 
         	cout << “File cannot be opened“<< endl;
@@ -29,21 +36,33 @@ int main() {
 	else{
 	while(!infile.eof()) {
 		getline(infile, name, ',');
-		nameV.push_back(name);
+		taskName.push_back(name);
 
 		getline(infile, category, ',');
-		categoryV.push_back(category);
+		taskCategory.push_back(category);
 
 		getline(infile, description, '\n');
-		descriptionV.push_back(description);
+		taskDescription.push_back(description);
 
 		i++;
 		}
 	}
 	infile.close();
 	
+//	taskName = nameV;
+//	taskCategory = categoryV;
+//	taskDescription = descriptionV;	
+	
 	cout << "Task Name" << "\t" << "Task Category" << "\t" << "Task Description" << endl;
 	for (int j = 0; j < i; j++) {
-		cout << nameV[j] << "\t" << categoryV[j] << "\t" << descriptionV[j] << endl;
+		cout << taskName[j] << "\t" << taskCategory[j] << "\t" << taskDescription[j] << endl;
 	}
+
+	ofstream outFILE;
+	outFILE.open("Tasks.txt");
+	
+	outFILE << "100 Project, School, Finish Task Scheduler" << endl;
+	outFILE.close();
+
 }
+
