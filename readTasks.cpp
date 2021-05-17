@@ -1,28 +1,49 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
 
 using namespace std;
 
 int main() {
 
-ifstream infile;
-ofstream outfile;
+	ifstream infile;
 
-infile.open (“Tasks.txt”);
+	string name;
+	string category;
+	string description;
 
-if (!infile){ 
-cout << “File cannot be opened“<< endl;
-exit (1); 
-}
-outfile.open (“Tasks.txt);
-infile >> arrayTasks; 
-for(i=0; i< arrayTasks.size();I++) { 
-outfile << arrayTasks[i]<< endl;
-infile>> arrayTasks; 
-};
+	vector<string>nameV;
+	vector<string>categoryV;
+	vector<string>descriptionV;
+	int i = 0;
 
-infile.close();
-outfile.close ();
+	infile.open (“Tasks.txt”);
 
-return 0; 
+	if (!infile){ 
+        	cout << “File cannot be opened“<< endl;
+		exit (1); 
+	}
+	
+	else{
+	while(!infile.eof()) {
+		getline(infile, name, ',');
+		nameV.push_back(name);
+
+		getline(infile, category, ',');
+		categoryV.push_back(category);
+
+		getline(infile, description, '\n');
+		descriptionV.push_back(description);
+
+		i++;
+		}
+	}
+	infile.close();
+	
+	cout << "Task Name" << "\t" << "Task Category" << "\t" << "Task Description" << endl;
+	for (int j = 0; j < i; j++) {
+		cout << nameV[j] << "\t" << categoryV[j] << "\t" << descriptionV[j] << endl;
+	}
 }
