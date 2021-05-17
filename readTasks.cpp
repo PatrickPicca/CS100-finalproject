@@ -36,13 +36,13 @@ int main() {
 	else{
 	while(!infile.eof()) {
 		getline(infile, name, ',');
-		taskName.push_back(name);
+		myTask.taskName.push_back(name);
 
 		getline(infile, category, ',');
-		taskCategory.push_back(category);
+		myTask.taskCategory.push_back(category);
 
 		getline(infile, description, '\n');
-		taskDescription.push_back(description);
+		myTask.taskDescription.push_back(description);
 
 		i++;
 		}
