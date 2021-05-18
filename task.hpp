@@ -23,7 +23,16 @@ class Task {
 		void DisplayTask();
 		void SaveTask();
 		void DisplayMenu();		
-
+		void setName(string n);
+		void setDay(int d);
+		void setMonth(int m);
+		void setYear(int y);
+		void setPriority(int p);
+		string getName();
+		int getDay();
+		int getMonth();
+		int getYear();
+		int getPriority();
 };
 
 #endif //__TASK_HPP__
