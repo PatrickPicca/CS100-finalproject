@@ -16,6 +16,6 @@ class SortClass {
 		virtual Filter(vector<Task> &vect, string input) {}
 		
 
-} 
+}; 
 
 #endif
