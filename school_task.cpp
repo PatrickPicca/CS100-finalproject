@@ -58,11 +58,33 @@ using namespace std;
 
 		cout << "The set due date for " << getName() << " is: " << getDay() << "/" << getMonth() << "/" << getYear() << endl;
 
-
-	//add priority stuff here 
 		
+		cout << "Please set a priority for " << getName() << ". Select one of the following corresponding numbers followed by [ENTER]." << endl;
+		cout << "1. Priority is relaxed." << endl;
+		cout << "2. Priority is medium." << endl;
+		cout << "3. Priority is high." << endl;
 
+		cin.ignore();
+		getline(cin, priority);
+		
+		while(priority < 1 && priority > 3){
+			cout << "Invalid input. Please enter a valid number corresponding to the level of priority of " << getName() << " follwed by [ENTER]" << endl;
+			cin.ignore();
+			getline(cin, priority);
+		}
+		cout << "You entered: " << getPriority() << endl;
+	
+		if(priority == 1) {
+			cout << "The priority of " << getName() << " is relaxed." << endl;
+		}
+		else if (priority == 2) {
+			cout << "The priority of " << getName() << " is medium." << endl;
+		}
+		else {
+			cout << "The priority of " << getName() << " is high." << endl;	
 
+		cout << getName() << " is now saved in your Planner." << endl;
+		
 	}
 	// SchoolTask::SchoolTask(){}
 
