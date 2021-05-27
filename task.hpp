@@ -13,13 +13,14 @@ class Task {
 
 	protected:
 		string task_name;
+		string task_description;
 		int day;
 		int month;
 		int year;
 		int priority;
 	public:
 		Task();
-		string task_description();
+		//string task_description();
 		void DisplayTask();
 		void SaveTask();
 		void DisplayMenu();		
@@ -28,6 +29,8 @@ class Task {
 		void setMonth(int m);
 		void setYear(int y);
 		void setPriority(int p);
+		void setDescription(string d);
+		string getDescription();
 		string getName();
 		int getDay();
 		int getMonth();

@@ -4,16 +4,16 @@
 
 #include "task.hpp"
 
-class Task : public SchoolTask {
+class SchoolTask : public Task {
 
 
 	public: 
-		void Add_Note();
-		void SchoolTask();
+		void Add_SchoolTask();
+		//SchoolTask();
 };
 
 
-
+#endif
 
 
 

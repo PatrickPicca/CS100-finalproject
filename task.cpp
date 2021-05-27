@@ -7,6 +7,7 @@ using namespace std;
 
 Task::Task(){
 	string task_name = "";
+	string task_description = "";
 	int day = 0;
  	int month = 0;
 	int year = 0;
@@ -14,14 +15,15 @@ Task::Task(){
 }
 
 //create a description for the task
-string Task::task_description(){
+//string Task::task_description(){
 
-cout << "Create a title for your task follwed by [ENTER]." << endl;
+//cout << "Create a title for your task follwed by [ENTER]." << endl;
                        // cin.ignore();
                        // getline(cin,task_name);
                        // cout << "You entered: " << task_name << endl;
 		//	cout << "h";
-}
+//}
+
 
 void Task::DisplayTask(){}
 
@@ -29,7 +31,9 @@ void Task::SaveTask(){}
 
 //display menu that user chooses from
 
-
+void Task::setDescription(string d) {
+	task_description = d;
+}
 void Task::setName(string n){
 	task_name = n;
 }
@@ -44,6 +48,9 @@ void Task::setYear(int y){
 }
 void Task::setPriority(int p){
 	priority = p;
+}
+string Task::getDescription(){
+	return task_description;
 }
 string Task::getName(){
 	return task_name; 
