@@ -1,5 +1,5 @@
 #include "school_task.hpp"
-#include "task.hpp"
+#include "task.cpp"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -7,6 +7,7 @@ using namespace std;
 
 
 	void SchoolTask::Add_SchoolTask(){
+		string temp;
 		cout << "You are creating a school task." << endl;
 		
 		cout << "Create a title for your task follwed by [ENTER]." << endl;
@@ -23,36 +24,39 @@ using namespace std;
 		cout << "What day is " << getName() << " due? Enter a valid day of the month." << endl;
 		
 		cin.ignore();
-		getline(cin, day);
-		
+		getline(cin, temp);
+		day = std::stoi(temp);
 		while (day < 1 || day > 31){
 			cout << "Invalid input. Please enter a valid day of the month followed by [ENTER]." << endl;
 			cin.ignore();
-			getline(cin, day);
+			getline(cin, temp);
+			day = stoi(temp);
 		}
 		cout << "You entered: " << getDay() << endl;
 		
 		cout << "What month is " << getName() << " due? Enter a valid month as an integer." << endl;
 		
 		cin.ignore();
-		getline(cin, month);
-		
+		getline(cin, temp);
+		month = std::stoi(temp);
 		while(month < 1 || month > 12) {
 			cout << "Invalid input. Please enter a valid month of the year as an integer followed by [ENTER]." << endl;
 			cin.ignore();
-			getline(cin, month);
+			getline(cin, temp);
+			month = stoi(temp);
 		}
 		cout << "You entered: " << getMonth() << endl;
 		
 		cout << "What year is " << getName() << " due? Enter a valid year as an integer." << endl;
 		
 		cin.ignore();
-                getline(cin, year);
-
+                getline(cin, temp);
+		year = stoi(temp);
 		while (year < 2021 || year > 3000){
 			cout << "Invalid input. Please enter a valid year as an integer followed by [ENTER]." << endl;
                         cin.ignore();
-                        getline(cin, year);
+                        getline(cin, temp);
+			year = stoi(temp);
 		}
 		cout << "You entered: " << getYear() << endl;
 
@@ -65,12 +69,14 @@ using namespace std;
 		cout << "3. Priority is high." << endl;
 
 		cin.ignore();
-		getline(cin, priority);
+		getline(cin, temp);
+		priority = stoi(temp);
 		
 		while(priority < 1 && priority > 3){
 			cout << "Invalid input. Please enter a valid number corresponding to the level of priority of " << getName() << " follwed by [ENTER]" << endl;
 			cin.ignore();
-			getline(cin, priority);
+			getline(cin, temp);
+			priority = stoi(temp);
 		}
 		cout << "You entered: " << getPriority() << endl;
 	
@@ -84,13 +90,10 @@ using namespace std;
 			cout << "The priority of " << getName() << " is high." << endl;	
 
 		cout << getName() << " is now saved in your Planner." << endl;
-		
+		}		
 	}
 	// SchoolTask::SchoolTask(){}
 
-
-
-
-
+	
 
 

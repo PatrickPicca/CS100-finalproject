@@ -68,7 +68,7 @@ string Task::getName(){
 	return task_name; 
 }
 string Task::getCategory(){
-	return category;
+	return task_category;
 }
 int Task::getDay(){
 	return day;
@@ -85,7 +85,7 @@ int Task::getPriority(){
 
 
  
-virtual void Task::EditTask() = 0;
+//virtual void Task::EditTask(){}
 
 //void Task::DisplayMenu(){}
 

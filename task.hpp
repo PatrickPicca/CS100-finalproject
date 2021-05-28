@@ -14,6 +14,7 @@ class Task {
 	protected:
 		string task_name;
 		string task_description;
+		string task_category;
 		int day;
 		int month;
 		int year;
