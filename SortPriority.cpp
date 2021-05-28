@@ -10,7 +10,7 @@ class SortPriority : public SortClass
 {
 
 	public:
-		virtual Sort(vector<Task> &vect, string input){
+		virtual void Sort(vector<Task> &vect, string input){
 
 			vector<Task> tempList;
 
@@ -94,12 +94,12 @@ class SortPriority : public SortClass
 
 		}
 
-		virtual Filter(vector<Task> &vect, string input){
+		virtual void Filter(vector<Task> &vect, string input){
 			
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){
-				if (vect[i].getPriority == input)
+				if (vect[i].getPriority() == input)
 					tempList.push_back(vect[i]);
 			}			
 						
@@ -109,7 +109,7 @@ class SortPriority : public SortClass
 
 
 
-}
+};
 
 #endif
 

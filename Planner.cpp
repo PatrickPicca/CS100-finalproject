@@ -74,8 +74,15 @@ class Planner
 				getline(infile, category, ',');
 				getline(infile, name, ',');
 				getline(infile, description, '\n');
-				
-				SortSet.push_back(Task(category, name, description));
+
+				if (category == "School")
+				{
+					SortSet.push_back(SchoolTask(category, name, description));
+				}
+				else if(category == "Personal")
+				{
+					SortSet.push_back(PersonalTask(category, name, description));
+				}
 				i++;				
 			}
 			cout << "Finished Obtaining Tasks!!" << endl;
@@ -148,7 +155,7 @@ class Planner
 			cin >> input;
 			cout << endl;
 			int tasknumber = stoi(input)-1;
-			SortSet.at(tasknumber).editTask();
+			SortSet.at(tasknumber).EditTask();
 			Write_To_File();
 		}
 		else if (input == "5"){

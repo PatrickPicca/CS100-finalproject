@@ -11,7 +11,7 @@ class SortName : public SortClass
 {
 
 	public:
-		virtual Sort(vector<Task> &vect, string input){
+		virtual void Sort(vector<Task> &vect, string input){
 
 			vector<Task> tempList;
 
@@ -30,7 +30,7 @@ class SortName : public SortClass
 			tempList.clear();
 		}
 
-		virtual Filter(vector<Task> &vect, string input){
+		virtual void Filter(vector<Task> &vect, string input){
 
 			vector<Task> tempList;
 
@@ -47,6 +47,6 @@ class SortName : public SortClass
 		}
 
 
-}
+};
 
 #endif
