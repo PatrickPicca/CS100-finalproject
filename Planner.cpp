@@ -95,7 +95,7 @@ class Planner
 		int i = 0;
 		int size = SortSet.size();
 		while (i < SortSet.size()){
-			outFile << SortSet.at(i).getCategory() << "\t" << SortSet.at[i].getName() << "\t" << SortSet.at[i].getDescription() << endl;
+			outFile << SortSet.at(i).getCategory() << "\t" << SortSet.at(i).getName() << "\t" << SortSet.at(i).getDescription() << endl;
 				
 		}
 		cout << "Finished Saving Tasks!!" << endl;
