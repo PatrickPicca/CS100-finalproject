@@ -23,7 +23,7 @@ class Task {
 		//string task_description();
 		void DisplayTask();
 		void SaveTask();
-		void DisplayMenu();		
+		//void DisplayMenu();		
 		void setName(string n);
 		void setDay(int d);
 		void setMonth(int m);
