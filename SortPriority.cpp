@@ -4,7 +4,8 @@
 #include "SortClass.hpp"
 #include "task.hpp"
 #include <vector>
-
+#include <string>
+#include <cstring>
 
 class SortPriority : public SortClass 
 {
@@ -99,7 +100,7 @@ class SortPriority : public SortClass
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){
-				if (vect[i].getPriority() == input)
+				if (vect[i].getPriority() == stoi(input))
 					tempList.push_back(vect[i]);
 			}			
 						
