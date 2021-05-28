@@ -1,5 +1,9 @@
+#ifndef __SORTDATE_HPP__
+#define __SORTDATE_HPP__
+
 #include "SortClass.hpp"
 #include "Task.hpp"
+#include <vector>
 
 class SortDate : public SortClass
 {

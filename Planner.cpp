@@ -1,6 +1,9 @@
-#include "Task.cpp"
-#include "SchoolTask.hpp"
-#include "PersonalTask.hpp"
+#ifndef __PLANNER_CPP__
+#define __PLANNER_CPP__
+
+#include "task.hpp"
+#include "school_task.hpp"
+#include "personal_task.hpp"
 #include <iostream>
 #include <string.h>
 #include <vector>
@@ -14,16 +17,16 @@ using namespace std;
 class Planner
 {
 
-	private std::vector <std::Task> SortSet;
-	private std::vector <std::Task> FilterSet;
-	private boolean CurrentSet;
-
+	private: 
+		vector<Task> SortSet;
+		vector<Task> FilterSet;
+		bool CurrentSet;
+	
+	public:
 
 	
 	Planner()
 	{
-		SortSet = nullptr;
-		FilterSet = nullptr;
 		CurrentSet = true;
 	}
 	Planner(vector<Task> vect)
@@ -33,10 +36,10 @@ class Planner
 		CurrentSet = true;
 	}
 	
-	void Filter_Tasks(FilterSet, string input){
+	void Filter_Tasks(string input){
 		CurrentSet = false;
 	}
-	void Sort_Tasks(SortSet, string input){
+	void Sort_Tasks(string input){
 		CurrentSet = true;	
 	}
 	void ResetFilter(){
@@ -48,9 +51,9 @@ class Planner
 		cout << "Closing program. Have a good day!" << endl;
 	}
 	void Display_Planner(){
-		if (CurrentSet == true)
+		//if (CurrentSet == true)
 			//Display SortSet code
-		else if (CurrenSet == false)
+		//else if (CurrenSet == false)
 			//Display filterSet code
 	}
 	void Save_Task(){
@@ -84,7 +87,7 @@ class Planner
 		outFile.open("Tasks.txt");
 		int i = 0;
 		int size = SortSet.size();
-		while (i < SortSet.size(){
+		while (i < SortSet.size()){
 			outFile << SortSet.at(i).getCategory() << "\t" << SortSet.at[i].getName() << "\t" << SortSet.at[i].getDescription() << endl;
 				
 		}
@@ -157,7 +160,7 @@ class Planner
 		}
 	}
 
-}
+};
 
 #endif
 

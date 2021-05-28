@@ -1,7 +1,11 @@
+#ifndef __SORTNAME_HPP__
+#define __SORTNAME_HPP__
+
+
 #include "SortClass.hpp"
 #include "Task.hpp"
 #include <string>
-
+#include <vector>
 
 class SortName : public SortClass
 {
