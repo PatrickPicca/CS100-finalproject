@@ -7,12 +7,20 @@ using namespace std;
 
 Task::Task(){
 	string task_name = "";
+	string task_category = "";
 	string task_description = "";
 	int day = 0;
  	int month = 0;
 	int year = 0;
 	int priority = 0;
 }
+
+
+Task::Task(string category, string name, string description){
+	string task_name = name;
+        string task_category = category;
+        string task_description = description;
+} 
 
 //create a description for the task
 //string Task::task_description(){
@@ -39,6 +47,10 @@ void Task::setName(string n){
 }
 void Task::setDay(int d){
 	day = d;
+}
+
+void Task::setCategory(string c) {
+	task_category = c;
 }	
 void Task::setMonth(int m){
 	month = m;
@@ -55,6 +67,9 @@ string Task::getDescription(){
 string Task::getName(){
 	return task_name; 
 }
+string Task::getCategory(){
+	return category;
+}
 int Task::getDay(){
 	return day;
 }
@@ -70,6 +85,8 @@ int Task::getPriority(){
 
 
  
+virtual void Task::EditTask() = 0;
+
 //void Task::DisplayMenu(){}
 
 
