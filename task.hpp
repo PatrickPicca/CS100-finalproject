@@ -20,6 +20,7 @@ class Task {
 		int priority;
 	public:
 		Task();
+		Task(string category, string name, string description);
 		//string task_description();
 		void DisplayTask();
 		void SaveTask();
@@ -30,12 +31,16 @@ class Task {
 		void setYear(int y);
 		void setPriority(int p);
 		void setDescription(string d);
+		void setCategory(string c);
 		string getDescription();
+		string getCategory();
 		string getName();
 		int getDay();
 		int getMonth();
 		int getYear();
 		int getPriority();
+		virtual void EditTask() = 0;
+
 };
 
 #endif //__TASK_HPP__
