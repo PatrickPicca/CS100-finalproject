@@ -85,7 +85,7 @@ int Task::getPriority(){
 
 
  
-virtual void Task::EditTask() = 0;
+//virtual void Task::EditTask(){}
 
 //void Task::DisplayMenu(){}
 
