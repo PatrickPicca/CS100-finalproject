@@ -1,5 +1,9 @@
+#ifndef __SORTCATEGORY_HPP__
+#define __SORTCATEGORY_HPP__
+
 #include "SortClass.hpp"
 #include "Task.hpp"
+#include <vector>
 
 class SortCategory : public SortClass
 {
