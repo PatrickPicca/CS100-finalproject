@@ -14,13 +14,13 @@ using namespace std;
 		getline(cin, task_name);
 		cout << "You entered: " << getName() << endl;
 		
-		cout << "Create a description for " getName() << ". Once completed, hit [ENTER] to save." << endl;
+		cout << "Create a description for " << getName() << ". Once completed, hit [ENTER] to save." << endl;
 		cin.ignore();
 		getline(cin, task_description);
 		cout << "You entered: " << getDescription() << endl;
 
 		cout << "Set a due date for " getName() << ". Answer the following and hit [ENTER] to save." << endl;
-		cout << "What day is " getName() << " due? Enter a valid day of the month." << endl;
+		cout << "What day is " << getName() << " due? Enter a valid day of the month." << endl;
 		
 		cin.ignore();
 		getline(cin, day);
