@@ -9,7 +9,7 @@ class SortDate : public SortClass
 {
 
 	public:
-		virtual Sort(vector<Tasl> &vect, string date){
+		virtual void Sort(vector<Tasl> &vect, string date){
 			
 
 			vector<Task> tempList;
@@ -30,7 +30,7 @@ class SortDate : public SortClass
 
 		}
 
-		virtual Filter(vector<Tasl> &vect, string date){
+		virtual void Filter(vector<Tasl> &vect, string date){
 			
 
 			vector<Task> tempList;
@@ -46,6 +46,6 @@ class SortDate : public SortClass
 			
 		}
 
-}
+};
 
 #endif

@@ -9,7 +9,7 @@ class SortCategory : public SortClass
 {
 
 	public:
-		virtual Filter(vector<Task> &vect, string category){
+		virtual void Filter(vector<Task> &vect, string category){
 		
 
 			vector<Task> tempList;
@@ -28,7 +28,7 @@ class SortCategory : public SortClass
 			vect = tempList;
 			tempList.clear();
 		}
-		virtual Sort(vector<Task> #vect, string category){
+		virtual void  Sort(vector<Task> #vect, string category){
 			
 			vector<Task> tempList;
 
@@ -42,6 +42,6 @@ class SortCategory : public SortClass
 			tempList.clear();
 		}
 
-}
+};
 
 #endif
