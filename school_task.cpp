@@ -19,7 +19,7 @@ using namespace std;
 		getline(cin, task_description);
 		cout << "You entered: " << getDescription() << endl;
 
-		cout << "Set a due date for " getName() << ". Answer the following and hit [ENTER] to save." << endl;
+		cout << "Set a due date for " <<  getName() << ". Answer the following and hit [ENTER] to save." << endl;
 		cout << "What day is " << getName() << " due? Enter a valid day of the month." << endl;
 		
 		cin.ignore();
