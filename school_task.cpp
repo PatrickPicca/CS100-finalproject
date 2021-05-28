@@ -32,7 +32,7 @@ using namespace std;
 		}
 		cout << "You entered: " << getDay() << endl;
 		
-		cout << "What month is " getName() << " due? Enter a valid month as an integer." << endl;
+		cout << "What month is " << getName() << " due? Enter a valid month as an integer." << endl;
 		
 		cin.ignore();
 		getline(cin, month);
