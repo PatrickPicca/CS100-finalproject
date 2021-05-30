@@ -101,8 +101,10 @@ using namespace std;
 	}
 	SchoolTask::SchoolTask(){}
 
-virtual void EditTask() {
-
+ void SchoolTask::EditTask() {
+		string edit_input;
+                string temp;
+	
                 cout << "Which of the following would you like to edit? Select the corresponding number followed by [ENTER]." << endl;
                 cout << "1. Task name" << endl;
                 cout << "2. Task description" << endl;
@@ -110,12 +112,11 @@ virtual void EditTask() {
                 cout << "4. Task priority" << endl;
 	
                 cin.ignore();
-                string edit_input;
-		cin edit_input;
+		cin >> edit_input;
 	while(edit_input != "1" && edit_input!= "2" && edit_input!= "3" && edit_input != "4"){
                                 cout << "Invalid input. Please try again." << endl;
 				cin.ignore();
-                		cin edit_input;
+                		cin >> edit_input;
 		}
 		if(edit_input == "1") {
 			task_name = "";

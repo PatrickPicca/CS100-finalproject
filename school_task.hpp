@@ -11,6 +11,7 @@ class SchoolTask : public Task {
 		void Add_SchoolTask();
 		SchoolTask();
 		SchoolTask(string category, string name, string description);
+		virtual void EditTask() = 0;
 };
 
 
