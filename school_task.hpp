@@ -9,7 +9,8 @@ class SchoolTask : public Task {
 
 	public: 
 		void Add_SchoolTask();
-		//SchoolTask();
+		SchoolTask();
+		SchoolTask(string category, string name, string description);
 };
 
 
