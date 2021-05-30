@@ -104,6 +104,8 @@ using namespace std;
 	SchoolTask::SchoolTask(){}
 
  void SchoolTask::EditTask() {
+		cout << "EditTask function was called" << endl;
+
 		string edit_input;
                 string temp;
 	

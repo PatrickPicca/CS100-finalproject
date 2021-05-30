@@ -85,7 +85,7 @@ int Task::getPriority(){
 
 
  
-void Task::EditTask(){}
+void Task::EditTask(){ std::cout << "Is called in Task.cpp" << endl;}
 
 //void Task::DisplayMenu(){}
 

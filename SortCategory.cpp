@@ -2,16 +2,17 @@
 #define __SORTCATEGORY_HPP__
 
 #include "SortClass.hpp"
-#include "Task.hpp"
+//#include "task.hpp"
 #include <vector>
+//#include "task.cpp"
 
 class SortCategory : public SortClass
 {
 
 	public:
-		virtual void Filter(vector<Task> &vect, string category){
+		virtual void Filter(vector<Task> &vect){
 		
-
+			string category;
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){
@@ -28,8 +29,9 @@ class SortCategory : public SortClass
 			vect = tempList;
 			tempList.clear();
 		}
-		virtual void  Sort(vector<Task> #vect, string category){
-			
+		virtual void  Sorting(vector<Task> &vect){
+		
+			string category;	
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){

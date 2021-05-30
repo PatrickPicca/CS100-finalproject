@@ -11,8 +11,9 @@ class SortPriority : public SortClass
 {
 
 	public:
-		virtual void Sort(vector<Task> &vect, string input){
+		virtual void Sorting(vector<Task> &vect){
 
+			string input;
 			vector<Task> tempList;
 
 			if (input == "3"){
@@ -95,8 +96,9 @@ class SortPriority : public SortClass
 
 		}
 
-		virtual void Filter(vector<Task> &vect, string input){
-			
+		virtual void Filter(vector<Task> &vect){
+		
+			string input;	
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){
