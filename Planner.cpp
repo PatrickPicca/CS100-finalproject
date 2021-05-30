@@ -52,33 +52,36 @@ class Planner
 		cout << "4. By category." << endl;
 		cout << "5. Cancel." << endl;
 
-		string input;
-		cin >> input;
+		string theinput;
+		cin >> theinput;
 
-		if (input == "1")
+		if (theinput == "1")
 		{
 			SortPriority theSort;
 			theSort.Sorting(SortSet);
 		}	
-		if (input == "2")
+		else if (theinput == "2")
 		{
 			SortDate theSort;
 			theSort.Sorting(SortSet);
 		}
-		if (input == "3")
+		else if (theinput == "3")
 		{
 			SortName theSort;
 			theSort.Sorting(SortSet);
 		}
-		if (input == "4")
+		else if (theinput == "4")
 		{
+			cout << "Entered category sort call" << endl;
 			SortCategory theSort;
 			theSort.Sorting(SortSet);
 		}
-		if (input == "5")
+		else if (theinput == "5")
 			DisplayMenu();
 		else 
+		{
 			Sort_Tasks();
+		}
 		
 	}
 	void ResetFilter(){
