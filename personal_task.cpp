@@ -7,11 +7,12 @@ using namespace std;
 
 
 PersonalTask::PersonalTask(string category, string name, string description){
-  	         string task_name = name;
-        	 string task_category = category;
-       		 string task_description = description;
+  	         task_name = name;
+        	 task_category = category;
+       		 task_description = description;
 } 
 	void PersonalTask::Add_PersonalTask(){
+		task_category = "Personal";
 		string temp;
 		cout << "You are creating a personal task." << endl;
 		
