@@ -61,7 +61,7 @@ void Task::setYear(int y){
 void Task::setPriority(int p){
 	priority = p;
 }
-string Task::getDescription(){
+string Task::getDescription(){	
 	return task_description;
 }
 string Task::getName(){

@@ -7,13 +7,14 @@ using namespace std;
 
 
 	SchoolTask::SchoolTask(string category, string name, string description){
-  	         string task_name = name;
-        	 string task_category = category;
-       		 string task_description = description;
+  	         task_name = name;
+        	 task_category = category;
+       		 task_description = description;
 } 
 
 
 	void SchoolTask::Add_SchoolTask(){
+		task_category = "School";
 		string temp;
 		cout << "You are creating a school task." << endl;
 		
