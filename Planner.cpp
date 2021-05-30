@@ -132,7 +132,8 @@ class Planner
 				getline(infile, category, '\n');	
 				getline(infile, name, '\n');	
 				getline(infile, description, '\n');
-			
+		
+	
 				string skip;	
 				getline(infile, skip);
 	
