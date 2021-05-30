@@ -8,7 +8,6 @@
 #define RESET   "\033[0m"
 using namespace std;
 
-
 	SchoolTask::SchoolTask(string category, string name, string description){
   	         task_name = name;
         	 task_category = category;
