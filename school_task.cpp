@@ -23,19 +23,19 @@ using namespace std;
 		cout << "You entered: " << getName() << endl;
 		
 		cout << "Create a description for " << getName() << ". Once completed, hit [ENTER] to save." << endl;
-		cin.ignore();
+		//cin.ignore();
 		getline(cin, task_description);
 		cout << "You entered: " << getDescription() << endl;
 
 		cout << "Set a due date for " <<  getName() << ". Answer the following and hit [ENTER] to save." << endl;
 		cout << "What day is " << getName() << " due? Enter a valid day of the month." << endl;
 		
-		cin.ignore();
+		//cin.ignore();
 		getline(cin, temp);
 		day = std::stoi(temp);
 		while (day < 1 || day > 31){
 			cout << "Invalid input. Please enter a valid day of the month followed by [ENTER]." << endl;
-			cin.ignore();
+		//	cin.ignore();
 			getline(cin, temp);
 			day = stoi(temp);
 		}
@@ -43,12 +43,12 @@ using namespace std;
 		
 		cout << "What month is " << getName() << " due? Enter a valid month as an integer." << endl;
 		
-		cin.ignore();
+		//cin.ignore();
 		getline(cin, temp);
 		month = std::stoi(temp);
 		while(month < 1 || month > 12) {
 			cout << "Invalid input. Please enter a valid month of the year as an integer followed by [ENTER]." << endl;
-			cin.ignore();
+		//	cin.ignore();
 			getline(cin, temp);
 			month = stoi(temp);
 		}
@@ -56,12 +56,12 @@ using namespace std;
 		
 		cout << "What year is " << getName() << " due? Enter a valid year as an integer." << endl;
 		
-		cin.ignore();
+		//cin.ignore();
                 getline(cin, temp);
 		year = stoi(temp);
 		while (year < 2021 || year > 3000){
 			cout << "Invalid input. Please enter a valid year as an integer followed by [ENTER]." << endl;
-                        cin.ignore();
+                 //       cin.ignore();
                         getline(cin, temp);
 			year = stoi(temp);
 		}
@@ -75,13 +75,13 @@ using namespace std;
 		cout << "2. Priority is medium." << endl;
 		cout << "3. Priority is high." << endl;
 
-		cin.ignore();
+		//cin.ignore();
 		getline(cin, temp);
 		priority = stoi(temp);
 		
 		while(priority < 1 && priority > 3){
 			cout << "Invalid input. Please enter a valid number corresponding to the level of priority of " << getName() << " follwed by [ENTER]" << endl;
-			cin.ignore();
+		//	cin.ignore();
 			getline(cin, temp);
 			priority = stoi(temp);
 		}
