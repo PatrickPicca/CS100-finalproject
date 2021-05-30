@@ -25,7 +25,7 @@ TEST(dueDateOrder, simpleTest){
   
   date = 1;
   
-  EXPECT_EQ(getDay(Sorting(templist), "5") 
+  EXPECT_EQ(getDay(Sorting(templist), "5");
 }
 
 TEST(dueDateOrder, InvalidTest1){ // First task empty
@@ -44,7 +44,7 @@ TEST(dueDateOrder, InvalidTest1){ // First task empty
   
   date = 1;
   
-  EXPECT_EQ(getDay(Sorting(templist), "20") 
+  EXPECT_EQ(getDay(Sorting(templist), "20");
 }
 
  
@@ -63,7 +63,7 @@ TEST(dueDateOrder, InvalidTest2){ // Second Task empty
   templist.pushback(t2);
   
   date = 1;
-  EXPECT_EQ(getDay(Sorting(templist), "5") 
+  EXPECT_EQ(getDay(Sorting(templist), "5");
 }
 
 TEST(dueDateOrder, sameDate){ // with 2 tasks and earliest option
@@ -85,7 +85,7 @@ TEST(dueDateOrder, sameDate){ // with 2 tasks and earliest option
   
   date = 1;
   
-  EXPECT_EQ(getDay(Sorting(templist), "5") 
+  EXPECT_EQ(getDay(Sorting(templist), "5");
 }
 
 TEST(dueDateOrder, sameDate2){ // with 3 tasks and latest option
@@ -114,7 +114,7 @@ TEST(dueDateOrder, sameDate2){ // with 3 tasks and latest option
   
   date = 2;
   
-  EXPECT_EQ(getDay(Sorting(templist), "20") 
+  EXPECT_EQ(getDay(Sorting(templist), "20");
 }
 
 TEST(dueDateOrder, noEntry){  
@@ -134,7 +134,7 @@ TEST(dueDateOrder, noEntry){
   
   date = 1;
   
-  EXPECT_EQ(getDay(Sorting(templist), "") 
+  EXPECT_EQ(getDay(Sorting(templist), "");
 }
 
 
@@ -164,7 +164,7 @@ TEST(dueDateOrder, sortEarliest){ // 3 tasks with earliest option
   
   date = 1;
   
-  EXPECT_EQ(getDay(Sorting(templist), "1") 
+  EXPECT_EQ(getDay(Sorting(templist), "1");
 }
 
 TEST(dueDateOrder, sortLatest){ // 3 tasks with latest option
@@ -193,7 +193,7 @@ TEST(dueDateOrder, sortLatest){ // 3 tasks with latest option
   
   date = 2;
   
-  EXPECT_EQ(getDay(Sorting(templist), "3") 
+  EXPECT_EQ(getDay(Sorting(templist), "3");
 }
 
 int main(int argc, char **argv) {
