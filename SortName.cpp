@@ -3,7 +3,7 @@
 
 
 #include "SortClass.hpp"
-#include "Task.hpp"
+#include "task.hpp"
 #include <string>
 #include <vector>
 
@@ -11,8 +11,10 @@ class SortName : public SortClass
 {
 
 	public:
-		virtual void Sort(vector<Task> &vect, string input){
+		virtual void Sorting(vector<Task> &vect){
 
+
+			string input;
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){
@@ -30,8 +32,9 @@ class SortName : public SortClass
 			tempList.clear();
 		}
 
-		virtual void Filter(vector<Task> &vect, string input){
-
+		virtual void Filter(vector<Task> &vect){
+			
+			string input;
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){
