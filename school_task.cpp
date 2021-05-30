@@ -70,7 +70,7 @@ using namespace std;
 			year = stoi(temp);
 		}
 		cout << "You entered: " << GREEN << getYear() << RESET << endl;
-		cout << "The set due date for " << BLUE << getName() << RESET << " is: " << GREEN << getDay() << "/" << getMonth() << "/" << getYear() << RESET << endl;
+		cout << "The set due date for " << BLUE << getName() << RESET << " is: " << GREEN << getMonth() << "/" << getDay() << "/" << getYear() << RESET << endl;
 
 		cout << endl;
 		cout << "Please set a priority level for " << BLUE << getName() << RESET << ". Select a corresponding number followed by [ENTER]." << endl;
