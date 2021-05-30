@@ -6,6 +6,11 @@
 using namespace std;
 
 
+PersonalTask::PersonalTask(string category, string name, string description){
+  	         string task_name = name;
+        	 string task_category = category;
+       		 string task_description = description;
+} 
 	void PersonalTask::Add_SchoolTask(){
 		cout << "You are creating a personal task." << endl;
 		
@@ -63,7 +68,7 @@ using namespace std;
 
 	}
 
-	// PersonalTask::PersonalTask(){}
+	PersonalTask::PersonalTask(){}
 
 
-
+	void PersonalTask::EditTask() {

@@ -9,8 +9,9 @@ class PersonalTask : public Task {
 
 	public: 
 		void Add_PersonalTask();
-		//SchoolTask();
-
+		PersonalTask();
+		PersonalTask(string category, string name, string description);
+		virtual void EditTask();
 };
 
 
