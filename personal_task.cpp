@@ -11,7 +11,7 @@ PersonalTask::PersonalTask(string category, string name, string description){
         	 string task_category = category;
        		 string task_description = description;
 } 
-	void PersonalTask::Add_SchoolTask(){
+	void PersonalTask::Add_PersonalTask(){
 		cout << "You are creating a personal task." << endl;
 		
 		cout << "Create a title for your task follwed by [ENTER]." << endl;
@@ -71,4 +71,4 @@ PersonalTask::PersonalTask(string category, string name, string description){
 	PersonalTask::PersonalTask(){}
 
 
-	void PersonalTask::EditTask() {
+	void PersonalTask::EditTask() {}
