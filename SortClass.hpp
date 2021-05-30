@@ -11,9 +11,9 @@ class SortClass {
 
 	public:
 
-		virtual void Sort(vector<Task> &vect, string input) = 0;
+		virtual void Sorting(vector<Task> &vect) = 0;
 
-		virtual void Filter(vector<Task> &vect, string input) = 0;
+		virtual void Filter(vector<Task> &vect) = 0;
 		
 
 }; 

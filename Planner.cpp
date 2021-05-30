@@ -11,6 +11,10 @@
 #include <fstream>
 #include <string>
 #include "SortClass.hpp"
+#include "SortCategory.cpp"
+#include "SortDate.cpp"
+#include "SortPriority.cpp"
+#include "SortName.cpp"
 
 using namespace std;
 
@@ -39,8 +43,46 @@ class Planner
 	void Filter_Tasks(string input){
 		CurrentSet = false;
 	}
-	void Sort_Tasks(string input){
+	void Sort_Tasks(){
 		CurrentSet = true;	
+		cout << "How do you want to sort your tasks?" << endl;
+		cout << "1. By priority." << endl;
+		cout << "2. By date." << endl;
+		cout << "3. By name." << endl;
+		cout << "4. By category." << endl;
+		cout << "5. Cancel." << endl;
+
+		string theinput;
+		cin >> theinput;
+
+		if (theinput == "1")
+		{
+			SortPriority theSort;
+			theSort.Sorting(SortSet);
+		}	
+		else if (theinput == "2")
+		{
+			SortDate theSort;
+			theSort.Sorting(SortSet);
+		}
+		else if (theinput == "3")
+		{
+			SortName theSort;
+			theSort.Sorting(SortSet);
+		}
+		else if (theinput == "4")
+		{
+			cout << "Entered category sort call" << endl;
+			SortCategory theSort;
+			theSort.Sorting(SortSet);
+		}
+		else if (theinput == "5")
+			DisplayMenu();
+		else 
+		{
+			Sort_Tasks();
+		}
+		
 	}
 	void ResetFilter(){
 		CurrentSet = true;
@@ -96,8 +138,9 @@ class Planner
 	
 				if (category == "School")
 				{
-				
+					
 					SortSet.push_back(SchoolTask((string)category, (string)name, description));
+					//SortSet.at(i).EditTask();
 				}
 				else if(category == "Personal")
 				{					
@@ -128,15 +171,18 @@ class Planner
 	}
 	void DisplayMenu(){
 		Read_From_File();
+		//cout << "About to call editTask of current task in list" << SortSet.at(0).getName() << endl;
+		//SortSet.at(0).EditTask();
 		string input;
 	
 		cout << "Welcome to PlannerPlus. Enter the corresponding number for the following options follwed by [ENTER]." << endl;
 		
 		cout << "1. Create New Task." << endl;
 		cout << "2. Display Existing Task(s)." << endl;
-		cout << "3. Delete a Task." << endl;
-		cout << "4. Edit an Existing Task" << endl;
-		cout << "5. Quit." << endl;
+		cout << "3. Sort or Filter Your Tasks." << endl;
+		cout << "4. Delete a Task." << endl;
+		cout << "5. Edit an Existing Task" << endl;
+		cout << "6. Quit." << endl;
 
 		cin >> input;
 	
@@ -175,6 +221,11 @@ class Planner
 			DisplayMenu();
 		}
 		else if (input == "3"){
+			Sort_Tasks();
+			Write_To_File();
+			DisplayMenu();
+		}
+		else if (input == "4"){
 			cout << "Please enter a number for which task you want to delete: ";
 			cin >> input;
 			int tasknumber = (stoi(input))-1;
@@ -186,17 +237,26 @@ class Planner
 			Write_To_File();
 			DisplayMenu();
 		}
-		else if (input == "4") {
+		else if (input == "5") {
 			
-			cout << "Please enter a number for which task you want to edit:";
+			cout << "Please enter a number for which task you want to edit: ";
 			cin >> input;
 			cout << endl;
 			int tasknumber = stoi(input)-1;
+			cout << "In edit task of planner!" << endl;
+			if (SortSet.at(tasknumber).getCategory() == "School")
+			{
+				cout << "About to call edit for schooltask object" << endl;
+				//SchoolTask *theTask = dynamic_cast<SchoolTask*>(SortSet.at(tasknumber));
+				//theTask.EditTask();
+				//dynamic_cast<SchoolTask&>(SortSet.at(tasknumber)).EditTask();
+				//(SchoolTask)SortSet.at(tasknumber).EditTask();
+			}
 			SortSet.at(tasknumber).EditTask();
 			Write_To_File();
 			DisplayMenu();
 		}
-		else if (input == "5"){
+		else if (input == "6"){
 			exit(0);
 		}
 		else {
