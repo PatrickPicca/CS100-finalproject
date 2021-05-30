@@ -15,7 +15,6 @@ using namespace std;
        		 task_description = description;
 } 
 
-
 	void SchoolTask::Add_SchoolTask(){
 		task_category = "School";
 		string temp;
