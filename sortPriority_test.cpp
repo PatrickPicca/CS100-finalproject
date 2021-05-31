@@ -1,5 +1,5 @@
-#ifndef __SORTPRIORITY_HPP__
-#define __SORTPRIORITY_HPP__
+#ifndef __SORTPRIORITY_TEST_HPP__
+#define __SORTPRIORITY_TEST_HPP__
 
 #include "gtest/gtest.h"
 
@@ -13,8 +13,7 @@
 
 
 TEST(priorityOrder, simpleTest){ 
-  vector<Task*> templist;
-  
+  vector<Task*> templist; 
   Task* t1 = new Task();
   t1->setName("Hist HW");
   t1->setPriority(3);
@@ -36,8 +35,8 @@ TEST(priorityOrder, simpleTest){
   
   int input = 3;
   
-  EXPECT_EQ(templist.at(0)->getName(), "Hist HW");
-  EXPECT_EQ(templist.at(0)->getPriority(), 3);
+  EXPECT_EQ(templist.at(0).getName(), "Hist HW");
+  EXPECT_EQ(templist.at(0).getPriority(), 3);
 }
 /*
 TEST(priorityOrder, InvalidTest1){ // First task empty
