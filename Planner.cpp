@@ -209,16 +209,28 @@ class Planner
 				getline(infile, month, '\n');
 				getline(infile, year, '\n');
 
-				string skip;	
+				string skip;
+				int theDay, theMonth, theYear, theprio;	
 				getline(infile, skip);
-				int theprio = stoi(priority);
-				int theDay = stoi(day);
-				int theMonth = stoi(month);
-				int theYear = stoi(year);
+				if (priority == "")
+					theprio;
+				else
+					theprio = stoi(priority);
+				if (day == "")
+					theDay;
+				else
+					theDay = stoi(day);
+				if (month == "")
+					theMonth;
+				else
+					theMonth = stoi(month);
+				if (year == "")
+					theYear;
+				else
+					theYear = stoi(year);
 	
 				if (category == "School")
-				{
-					
+				{	
 					SortSet.push_back(SchoolTask((string)category, (string)name, description, theprio, theDay, theMonth, theYear));
 				}
 				else if(category == "Personal")
