@@ -25,19 +25,21 @@ class Planner
 		vector<Task> SortSet;
 		vector<Task> FilterSet;
 		bool CurrentSet;
-	
+		bool firstread;	
 	public:
 
 	
 	Planner()
 	{
 		CurrentSet = true;
+		firstread = false;
 	}
 	Planner(vector<Task> vect)
 	{
 		SortSet = vect;
 		FilterSet = vect;
 		CurrentSet = true;
+		firstread = false;
 	}
 	
 	void Filter_Tasks(){
@@ -110,8 +112,7 @@ class Planner
 			theSort.Sorting(SortSet);
 		}
 		else if (theinput == "4")
-		{
-			cout << "Entered category sort call" << endl;
+		{	
 			SortCategory theSort;
 			theSort.Sorting(SortSet);
 		}
@@ -147,8 +148,7 @@ class Planner
 			else
 				cout << "You currently do not have any tasks!" << endl;
 		}
-		else{
-
+		else if (CurrentSet == false){	
 			int i = 0;
 			if (FilterSet.size() != 0 ){
 				while (i < FilterSet.size()){	
@@ -170,7 +170,7 @@ class Planner
 		
 	}
 	void Read_From_File(){
-		ifstream infile;
+		ifstream infile;	
 		infile.open("Tasks.txt");
 		if (!infile){		
 			ofstream outFile;
@@ -206,6 +206,14 @@ class Planner
 					getline(infile, skip);
 				}
 				i++;				
+			}
+			if (FilterSet.size() == 0 && firstread == false)
+			{	
+				firstread = true;
+				FilterSet = SortSet;
+			}
+			else{
+			//FilterSet = SortSet;
 			}
 			//cout << "Finished Obtaining Tasks!!" << endl;
 			infile.close();
@@ -317,10 +325,8 @@ class Planner
 			if (SortSet.at(tasknumber).getCategory() == "School")
 			{
 				cout << "About to call edit for schooltask object" << endl;
-				//SchoolTask *theTask = dynamic_cast<SchoolTask*>(SortSet.at(tasknumber));
-				//theTask.EditTask();
-				//dynamic_cast<SchoolTask&>(SortSet.at(tasknumber)).EditTask();
-				//(SchoolTask)SortSet.at(tasknumber).EditTask();
+
+
 			}
 			SortSet.at(tasknumber).EditTask();
 			Write_To_File();

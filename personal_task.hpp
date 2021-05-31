@@ -11,7 +11,7 @@ class PersonalTask : public Task {
 		void Add_PersonalTask();
 		PersonalTask();
 		PersonalTask(string category, string name, string description);
-		virtual void EditTask();
+
 };
 
 
