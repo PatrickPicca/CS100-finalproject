@@ -122,11 +122,17 @@ TEST(taskTest, editDescription){
 TEST(taskTest, editDueDate){ 
   Task* t1 = new Task();
   t1->setDay(5);
+  t1->setMonth(6);
+  t1->setYear(2021);
   
   edit_input = 3;
-  t1->EditTask(6);
+  t1->EditTask(20);
+  t1->EditTask(7);
+  t1->EditTask(2021);
   
-  EXPECT_EQ(t1->getDay(), "6");
+  EXPECT_EQ(t1->getDay(), "20");
+  EXPECT_EQ(t1->getMonth(), "7");
+  EXPECT_EQ(t1->getYear(), "2021");
 }
 
 TEST(taskTest, editPriority){ 
