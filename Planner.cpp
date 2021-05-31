@@ -327,7 +327,6 @@ class Planner
 				cout << "About to call edit for schooltask object" << endl;
 
 
-
 			}
 			SortSet.at(tasknumber).EditTask();
 			Write_To_File();
