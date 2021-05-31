@@ -134,7 +134,6 @@ using namespace std;
 
 			cout << "What day is " << BLUE << getName() << RESET << " due?" << endl;
 
-         		        //cin.ignore();
                		        getline(cin, temp);
                			day = std::stoi(temp);
                 		while (day < 1 || day > 31){
