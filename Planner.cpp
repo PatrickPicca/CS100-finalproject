@@ -140,7 +140,9 @@ class Planner
 				while (i < SortSet.size()){	
 					cout << "Task Name: " << SortSet.at(i).getName() << endl;	
 					cout << "Task Category: " << SortSet.at(i).getCategory() << endl;
-					cout << "Description: " << SortSet.at(i).getDescription() << endl;	
+					cout << "Description: " << SortSet.at(i).getDescription() << endl;
+					if (SortSet.at(i).getPriority() == 1 || SortSet.at(i).getPriority() == 2 || SortSet.at(i).getPriority() == 3)
+						cout << "Task Priority: " << SortSet.at(i).getPriority() << endl;	
 					cout << endl;
 					i++;
 				}
@@ -155,6 +157,8 @@ class Planner
 					cout << "Task Name: " << FilterSet.at(i).getName() << endl;	
 					cout << "Task Category: " << FilterSet.at(i).getCategory() << endl;
 					cout << "Description: " << FilterSet.at(i).getDescription() << endl;	
+					if (FilterSet.at(i).getPriority() == 1 || FilterSet.at(i).getPriority() == 2 || FilterSet.at(i).getPriority() == 3)
+						cout << "Task Priority: " << FilterSet.at(i).getPriority() << endl;
 					cout << endl;
 					i++;
 				}
@@ -182,23 +186,28 @@ class Planner
 			int i = 0;
 			SortSet.clear();
 			while(!infile.eof()) {
-				string name, description, category;
+				string name, description, category, priority;
 				getline(infile, category, '\n');	
 				getline(infile, name, '\n');	
 				getline(infile, description, '\n');
-			
+				
+				//infile.ignore();
+				getline(infile, priority, '\n');
+				//cout << priority << endl;			
+		
 				string skip;	
 				getline(infile, skip);
+				int theprio = stoi(priority);
 	
 				if (category == "School")
 				{
 					
-					SortSet.push_back(SchoolTask((string)category, (string)name, description));
+					SortSet.push_back(SchoolTask((string)category, (string)name, description, theprio));
 					//SortSet.at(i).EditTask();
 				}
 				else if(category == "Personal")
 				{					
-					SortSet.push_back(PersonalTask(category, name, description));					
+					SortSet.push_back(PersonalTask(category, name, description, theprio));					
 				}
 				else{
 					//cout << "In else" << endl;
@@ -225,8 +234,14 @@ class Planner
 		int i = 0;
 		int size = SortSet.size();
 		while (i < SortSet.size()){
-			outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << endl;
+			if (i == SortSet.size()-1){
+				outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << endl;
+				i++;
+			}
+			else{
+			outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << endl;
 			i++;
+			}
 		}
 		cout << "Finished Saving Tasks!!" << endl;
 		outFile.close();

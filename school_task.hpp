@@ -10,7 +10,7 @@ class SchoolTask : public Task {
 	public: 
 		void Add_SchoolTask();
 		SchoolTask();
-		SchoolTask(string category, string name, string description);
+		SchoolTask(string category, string name, string description, int thePrio);
 	
 };
 
