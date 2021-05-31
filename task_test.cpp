@@ -1,9 +1,6 @@
-#ifndef __TASK_HPP__
-#define __TASK_HPP__
+
 #include "gtest/gtest.h"
-#include <string>
-#include <cstring>
-#include <iostream>
+#include "task.hpp"
 
 
 TEST(taskTest, nameTest){ 
@@ -151,4 +148,3 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 
-#endif
