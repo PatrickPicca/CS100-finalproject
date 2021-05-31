@@ -10,11 +10,18 @@ using namespace std;
 
 
 
-	SchoolTask::SchoolTask(string category, string name, string description, int thePrio){
+
+	SchoolTask::SchoolTask(string category, string name, string description, int thePrio, int theDay, int theMonth, int theYear){
+
   	         task_name = name;
         	 task_category = category;
        		 task_description = description;
 		 priority = thePrio;
+
+		 day = theDay;
+		month = theMonth;
+		year = theYear;
+
 } 
 
 	void SchoolTask::Add_SchoolTask(){
