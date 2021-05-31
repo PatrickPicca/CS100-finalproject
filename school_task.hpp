@@ -16,6 +16,3 @@ class SchoolTask : public Task {
 
 
 #endif
-
-
-
