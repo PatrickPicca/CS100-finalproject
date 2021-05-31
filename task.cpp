@@ -114,6 +114,7 @@ void Task::EditTask(){
 		if(edit_input == "1") {
 			task_name = "";
 			cout << "Type your new task name followed by [ENTER]." << endl;
+			cin.ignore();
 			getline(cin, task_name);
                 	
 			cout << "You entered: " << BLUE << getName() << RESET << endl; 	
@@ -122,6 +123,7 @@ void Task::EditTask(){
 		else if(edit_input == "2") {
 			task_description = "";
 			cout << "Type your new task description for " << BLUE << getName() << RESET << " followed by [ENTER]." << endl;
+			cin.ignore();
 			getline(cin, task_description);
 
 			cout << "You entered: " << GREEN << getDescription() << RESET << endl;
@@ -134,9 +136,10 @@ void Task::EditTask(){
 			cout << "You are changing your due date. Answer the following as integers and hit [ENTER] to save." << endl;
 
 			cout << "What day is " << BLUE << getName() << RESET << " due?" << endl;
-
-               		        getline(cin, temp);
-               			day = std::stoi(temp);
+				string temp;
+               		        cin.ignore();
+				getline(cin, temp);
+               			day = stoi(temp);
                 		while (day < 1 || day > 31){
                         		cout << "Invalid input. Please enter a valid day of the month followed by [ENTER]." << endl;
                         		getline(cin, temp);
@@ -210,6 +213,7 @@ void Task::EditTask(){
 		if(edit_input == "1") {
 			task_name = "";
 			cout << "Type your new task name followed by [ENTER]." << endl;
+			cin.ignore();
 			getline(cin, task_name);
                 	
 			cout << "You entered: " << getName() << endl; 	
@@ -219,13 +223,14 @@ void Task::EditTask(){
 		else if(edit_input == "2") {
 			task_description = "";
 			cout << "Type your new task description for " << getName() << " followed by [ENTER]." << endl;
+			cin.ignore();
 			getline(cin, task_description);
 
 			cout << "You entered: " << getDescription() << endl;
 			cout << endl;
 			cout << "Your task description has been changed." << endl;
 		}
-		else {
+		else if (edit_input == "3"){
 			day = 0;
 			month = 0;
 			year = 0;
@@ -262,7 +267,10 @@ void Task::EditTask(){
        		       }
 			cout << "You have saved the following date to complete " << getName() << ": " << getMonth() << "/" << getDay() << "/" << getYear() << endl;
 	
-		}	
+		}
+	else { 
+		cout << "Invalid!" << endl;
+	}	
 	}
 
 
