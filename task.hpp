@@ -2,7 +2,6 @@
 #define __TASK_HPP__
 
 
-
 #include <string>
 #include <cstring>
 #include <iostream>
