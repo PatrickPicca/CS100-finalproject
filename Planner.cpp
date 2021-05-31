@@ -40,8 +40,47 @@ class Planner
 		CurrentSet = true;
 	}
 	
-	void Filter_Tasks(string input){
+	void Filter_Tasks(){
 		CurrentSet = false;
+		cout << "How do you want to filter your tasks?" << endl;
+		cout << "1. By priority." << endl;
+		cout << "2. By date." << endl;
+		cout << "3. By name." << endl;
+		cout << "4. By category." << endl;
+		cout << "5. Cancel." << endl;
+
+		string theinput;
+		cin >> theinput;
+
+		if (theinput == "1")
+		{
+			SortPriority theSort;
+			theSort.Filter(FilterSet);
+		}	
+		else if (theinput == "2")
+		{
+			SortDate theSort;
+			theSort.Filter(FilterSet);
+		}
+		else if (theinput == "3")
+		{
+			SortName theSort;
+			theSort.Filter(FilterSet);
+		}
+		else if (theinput == "4")
+		{	
+			SortCategory theSort;
+			theSort.Filter(FilterSet);
+		}
+		else if (theinput == "5")
+		{
+			DisplayMenu();
+		}
+		else 
+		{
+			cout << "Invalid Input!" << endl;
+			Filter_Tasks();
+		}
 	}
 	void Sort_Tasks(){
 		CurrentSet = true;	
@@ -101,6 +140,21 @@ class Planner
 					cout << "Task Name: " << SortSet.at(i).getName() << endl;	
 					cout << "Task Category: " << SortSet.at(i).getCategory() << endl;
 					cout << "Description: " << SortSet.at(i).getDescription() << endl;	
+					cout << endl;
+					i++;
+				}
+			}
+			else
+				cout << "You currently do not have any tasks!" << endl;
+		}
+		else{
+
+			int i = 0;
+			if (FilterSet.size() != 0 ){
+				while (i < FilterSet.size()){	
+					cout << "Task Name: " << FilterSet.at(i).getName() << endl;	
+					cout << "Task Category: " << FilterSet.at(i).getCategory() << endl;
+					cout << "Description: " << FilterSet.at(i).getDescription() << endl;	
 					cout << endl;
 					i++;
 				}
@@ -221,7 +275,23 @@ class Planner
 			DisplayMenu();
 		}
 		else if (input == "3"){
-			Sort_Tasks();
+			cout << "Do you wish to Sort your current tasks or filter out to see tasks of only a certain type?" << endl;
+			cout << "1. Sort your list of tasks." <<endl;
+			cout << "2. Filter your tasks." << endl;
+			cout << "3. Remove your filter." << endl;
+			string userinput;
+			cin >> userinput;
+			
+			if (userinput == "1")
+				Sort_Tasks();
+			else if (userinput == "2")
+				Filter_Tasks();
+			else if (userinput == "3")
+				ResetFilter();
+			else{
+				cout << "Invalid Input! Restarting Menu!" << endl;
+				DisplayMenu();
+			}
 			Write_To_File();
 			DisplayMenu();
 		}
