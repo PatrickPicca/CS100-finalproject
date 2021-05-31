@@ -1,5 +1,5 @@
-#ifndef __SORTCATEGORY_HPP__
-#define __SORTCATEGORY_HPP__
+//#ifndef __SORTCATEGORY_HPP__
+//#define __SORTCATEGORY_HPP__
 
 #include "SortClass.hpp"
 //#include "task.hpp"
@@ -56,19 +56,40 @@ class SortCategory : public SortClass
 		}
 		virtual void  Filter(vector<Task> &vect){
 		
-			string category;	
-			vector<Task> tempList;
+			std::cout << "How do you wish to filter your tasks by?" << endl;
+			std::cout << "1. School tasks" << endl;
+			std::cout << "2. Personal tasks" << endl;
+				
+			string category;
 
-			for (int i = 0; i < vect.size(); i++){
-				if (vect[i].getCategory() == category)
-					tempList.push_back(vect[i]);
-			}			
+			std::cin >> category;
+			vector<Task> tempList;
+	
+
+			if (category == "1")
+			{
+				for (int i = 0; i < vect.size(); i++){
+					if(vect[i].getCategory() == "School")
+						tempList.push_back(vect[i]);					
+				}
+			}
+			else if (category == "2")
+			{
+				for (int i = 0; i < vect.size(); i++){
+					if(vect[i].getCategory() == "Personal")
+						tempList.push_back(vect[i]);					
+				}
+			}
+			else{
+				std::cout << "Invalid input!" << endl;
+				Filter(vect);
+			}	
 						
 			vect.clear();
-			vect = tempList;	
+			vect = tempList;
 			tempList.clear();
 		}
 
 };
 
-#endif
+//#endif
