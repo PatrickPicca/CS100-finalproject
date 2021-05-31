@@ -328,7 +328,6 @@ class Planner
 
 
 
-
 			}
 			SortSet.at(tasknumber).EditTask();
 			Write_To_File();
