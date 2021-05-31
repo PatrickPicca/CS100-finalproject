@@ -147,7 +147,7 @@ class Planner
                                 while (i < SortSet.size()){
                                        if(SortSet.at(i).getCategory() == "School"){
 
-                                               	out << "Task Name: " << BLUE << SortSet.at(i).getName() << RESET << endl;
+                                               	cout << "Task Name: " << BLUE << SortSet.at(i).getName() << RESET << endl;
                                                 cout << "Task Category: " << BOLDMAGENTA << SortSet.at(i).getCategory() << RESET << endl;
                                                 cout << "Description: " << GREEN << SortSet.at(i).getDescription() << RESET << endl;
                                                 cout << "Due Date: " << YELLOW << SortSet.at(i).getMonth() << "/" << SortSet.at(i).getDay() << "/" << SortSet.at(i).getYear() << RESET << endl;
@@ -199,25 +199,31 @@ class Planner
 			int i = 0;
 			SortSet.clear();
 			while(!infile.eof()) {
-				string name, description, category, priority;
+				string name, description, category, priority, day, month, year;
 				getline(infile, category, '\n');	
 				getline(infile, name, '\n');	
 				getline(infile, description, '\n');
 				
 				getline(infile, priority, '\n');
-		
+				getline(infile, day, '\n');
+				getline(infile, month, '\n');
+				getline(infile, year, '\n');
+
 				string skip;	
 				getline(infile, skip);
 				int theprio = stoi(priority);
+				int theDay = stoi(day);
+				int theMonth = stoi(month);
+				int theYear = stoi(year);
 	
 				if (category == "School")
 				{
 					
-					SortSet.push_back(SchoolTask((string)category, (string)name, description, theprio));
+					SortSet.push_back(SchoolTask((string)category, (string)name, description, theprio, theDay, theMonth, theYear));
 				}
 				else if(category == "Personal")
 				{					
-					SortSet.push_back(PersonalTask(category, name, description, theprio));					
+					SortSet.push_back(PersonalTask(category, name, description, theprio, theDay, theMonth, theYear));					
 				}
 				else{
 					getline(infile, skip);
@@ -242,11 +248,11 @@ class Planner
 		int size = SortSet.size();
 		while (i < SortSet.size()){
 			if (i == SortSet.size()-1){
-				outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << endl;
+				outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << endl;
 				i++;
 			}
 			else{
-			outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << endl;
+			outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << '\n' <<  endl;
 			i++;
 			}
 		}
