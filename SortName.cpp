@@ -16,14 +16,7 @@ class SortName : public SortClass
 	public:
 		virtual void Sorting(vector<Task> &vect){
 
-
-			string input;
 			vector<Task> other = vect;
-			vector<Task> tempList;
-			bool first = true;
-			string xvalue;
-			string yvalue;
-			int g;
 
 			int n = vect.size();
 			int j;
@@ -45,13 +38,37 @@ class SortName : public SortClass
 						} 	
 					}
 					else if(!isupper(other.at(i).getName().at(0)) && isupper(other.at(i).getName().at(0))){
+						if ((other.at(i).getName().at(0)) > (other.at(j).getName().at(0)+32)){
+							temp = other.at(i);
 
+							other.insert(other.begin()+i,other.at(j));
+							other.erase(other.begin()+i+1);
+
+							other.insert(other.begin()+j, temp);
+							other.erase(other.begin()+j+1);
+						} 
 					}
 					else if(isupper(other.at(i).getName().at(0)) && !isupper(other.at(i).getName().at(0))){
+						if ((other.at(i).getName().at(0)+32) > (other.at(j).getName().at(0))){
+							temp = other.at(i);
 
+							other.insert(other.begin()+i,other.at(j));
+							other.erase(other.begin()+i+1);
+
+							other.insert(other.begin()+j, temp);
+							other.erase(other.begin()+j+1);
+						} 
 					}
 					else{
+						if ((other.at(i).getName().at(0)) > (other.at(j).getName().at(0))){
+							temp = other.at(i);
 
+							other.insert(other.begin()+i,other.at(j));
+							other.erase(other.begin()+i+1);
+
+							other.insert(other.begin()+j, temp);
+							other.erase(other.begin()+j+1);
+						} 
 					}
 				}
 			}
@@ -60,18 +77,20 @@ class SortName : public SortClass
 		
 			
 			vect.clear();
-			vect = tempList;
-			tempList.clear();
+			vect = other;
+			other.clear();
 		}
 
 		virtual void Filter(vector<Task> &vect){
-			
+		
+			std::cout << "Please type in the keywords of the titles of the tasks you are looking for, followed by an [ENTER]" << endl;
+					
 			string input;
+			std::cin >> input;
 			vector<Task> tempList;
 
-			for (int i = 0; i < vect.size(); i++){
-
-				if (vect[i].getName().find(input) != string::npos)
+			for (int i = 0; i < vect.size(); i++){	
+				if (vect.at(i).getName().find(input) != std::string::npos)
 					tempList.push_back(vect[i]);
 				
 			}			
