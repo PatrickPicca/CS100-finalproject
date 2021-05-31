@@ -6,7 +6,7 @@
 #include <iostream>
 
 
-TEST(taskTest nameTest){ 
+TEST(taskTest, nameTest){ 
   Task* t1 = new Task();
   t1->setName("CS Project");
   
@@ -97,6 +97,47 @@ TEST(taskTest, allEmpty){
   EXPECT_EQ(t1->getPriority(), "");
   EXPECT_EQ(t1->getDescription(), "");
   EXPECT_EQ(t1->getCategory(), "");
+}
+
+TEST(taskTest, editName){ 
+  Task* t1 = new Task();
+  t1->setName("CS Project");
+  
+  edit_input = 1;
+  t1->EditTask("CS 100 Project");
+  
+  EXPECT_EQ(t1->getName(), "CS 100 Project");
+}
+
+TEST(taskTest, editDescription){ 
+  Task* t1 = new Task();
+  t1->setDescription("Finish making tests");
+  
+  edit_input = 2;
+  t1->EditTask("Finish making unit tests for all files");
+
+  EXPECT_EQ(t1->getDescription(), "Finish making unit tests for all files");
+}
+
+TEST(taskTest, editDueDate){ 
+  Task* t1 = new Task();
+  t1->setDay(5);
+  
+  edit_input = 3;
+  t1->EditTask(6);
+  
+  EXPECT_EQ(t1->getDay(), "6");
+}
+
+TEST(taskTest, editPriority){ 
+  Task* t1 = new Task();
+  t1->setPriority(2);
+  
+  edit_input = 4;
+  t1->EditTask(3);
+ 
+  EXPECT_EQ(t1->getPriority(), "3");
+
 }
 
 int main(int argc, char **argv) {
