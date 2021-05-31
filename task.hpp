@@ -40,7 +40,7 @@ class Task {
 		int getMonth();
 		int getYear();
 		int getPriority();
-		virtual void EditTask();
+		void EditTask();
 
 
 };
