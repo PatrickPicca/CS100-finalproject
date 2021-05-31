@@ -187,91 +187,62 @@ class Planner
 	void Save_Task(){
 		
 	}
-	void Read_From_File(){
-		ifstream infile;	
-		infile.open("Tasks.txt");
-		if (!infile){		
-			ofstream outFile;
-			outFile.open("Tasks.txt");
-			outFile.close();
-			Read_From_File();
-		}
-		else{
-			int i = 0;
-			SortSet.clear();
-			while(!infile.eof()) {
+	 void Read_From_File(){
+                ifstream infile;
+                infile.open("Tasks.txt");
+                if (!infile){
+                        ofstream outFile;
+                        outFile.open("Tasks.txt");
+                        outFile.close();
+                        Read_From_File();
+                }
+                else{
+                        int i = 0;
+                        SortSet.clear();
+                        while(!infile.eof()) {
+                                string name, description, category, priority, day, month, year;
+                                getline(infile, category, '\n');
+                                getline(infile, name, '\n');
+                                getline(infile, description, '\n');
 
-				string name, description, category, priority, day, month, year;
+                                getline(infile, priority, '\n');
+                                getline(infile, day, '\n');
+                                getline(infile, month, '\n');
+                                getline(infile, year, '\n');
 
-				getline(infile, category, '\n');	
-				getline(infile, name, '\n');	
-				getline(infile, description, '\n');
-	
-				getline(infile, priority, '\n');
-				getline(infile, day, '\n');
-				getline(infile, month, '\n');
-				getline(infile, year, '\n');
+                                string skip;
+                                getline(infile, skip);
+                                int theprio = stoi(priority);
+                                int theDay = stoi(day);
+                                int theMonth = stoi(month);
+                                int theYear = stoi(year);
 
-				string skip;	
-				getline(infile, skip);
-				int theprio = stoi(priority);
-				int theDay = stoi(day);
-				int theMonth = stoi(month);
-				int theYear = stoi(year);
+                                if (category == "School")
+                                {
 
-				
-				getline(infile, priority, '\n');
-					
-		
-				string skip;	
-				getline(infile, skip);
-				int theprio = stoi(priority);
-
-	
-				if (category == "School")
-				{
-					
-
-					SortSet.push_back(SchoolTask((string)category, (string)name, description, theprio, theDay, theMonth, theYear));
-				}
-				else if(category == "Personal")
-				{					
-					SortSet.push_back(PersonalTask(category, name, description, theprio, theDay, theMonth, theYear));					
-				}
-				else{
-					getline(infile, skip);
-					getline(infile, skip);
-				}
-				i++;				
-			}
-			if (FilterSet.size() == 0 && firstread == false)
-			{	
-				firstread = true;
-				FilterSet = SortSet;
-			}
-			else{
-			}
-			infile.close();
-		}	
-	}
-	void Write_To_File(){
-		ofstream outFile;
-                outFile.open("Tasks.txt");
-                int i = 0;
-                int size = SortSet.size();
-                while (i < SortSet.size()){
-                        if (i == SortSet.size()-1){
-                                outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << endl;
+                                        SortSet.push_back(SchoolTask((string)category, (string)name, description, theprio, theDay, theMonth, theYear));
+                                }
+                                else if(category == "Personal")
+                                {
+                                        SortSet.push_back(PersonalTask(category, name, description, theprio, theDay, theMonth, theYear));     
+                                }
+                                else{
+                                        getline(infile, skip);
+                                        getline(infile, skip);
+                                }
                                 i++;
                         }
-                        else{
-                        outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << '\n' <<  endl;
-                        i++;
+                        if (FilterSet.size() == 0 && firstread == false)
+                        {
+                                firstread = true;
+                                FilterSet = SortSet;
                         }
+                        else{
+                        }
+                        infile.close();
                 }
-                cout << "Finished Saving Tasks!!" << endl;
-                outFile.close();
         }
+
      void DisplayMenu(){
                 Read_From_File();
 
