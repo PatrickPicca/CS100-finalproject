@@ -2,7 +2,7 @@
 #define __SORTCATEGORY_HPP__
 #include "gtest/gtest.h"
 #include "SortClass.hpp"
-#include "Task.hpp"
+#include "task.hpp"
 #include <vector>
 
 
