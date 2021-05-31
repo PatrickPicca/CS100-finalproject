@@ -22,10 +22,11 @@ Task::Task(){
 }
 
 
-Task::Task(string category, string name, string description){
+Task::Task(string category, string name, string description, int thePrio){
 	string task_name = name;
         string task_category = category;
         string task_description = description;
+	priority = thePrio;
 } 
 
 //create a description for the task
