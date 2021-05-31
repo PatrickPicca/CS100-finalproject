@@ -5,6 +5,14 @@ SET(CMAKE_CXX_STANDARD 11)
 ADD_SUBDIRECTORY(googletest)
 
 ADD_EXECUTABLE(test
+    personalTask_test.cpp 
+    plannerTest.cpp      
+    schoolTask_test.cpp   
+    sortCategory_test.cpp 
+    sortDate_test.cpp     
+    sortName_test.cpp     
+    sortPriority_test.cpp 
+    task_test.cpp  
     main.cpp
 )
 
