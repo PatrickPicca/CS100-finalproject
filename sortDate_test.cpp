@@ -1,3 +1,5 @@
+#ifndef __SORTDATE_HPP__
+#define __SORTDATE_HPP__
 #include "gtest/gtest.h"
 #include "SortClass.hpp"
 #include "task.hpp"

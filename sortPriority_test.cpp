@@ -1,3 +1,6 @@
+
+#ifndef __SORTPRIORITY_HPP__
+#define __SORTPRIORITY_HPP__
 #include "SortClass.hpp"
 #include "task.hpp"
 #include <vector>
@@ -235,4 +238,4 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 
-
+#endif

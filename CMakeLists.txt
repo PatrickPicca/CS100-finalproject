@@ -5,7 +5,7 @@ ADD_SUBDIRECTORY(googletest)
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(test
-    task_test.cpp 
+    personalTask_test.cpp 
 )
 
 ADD_EXECUTABLE(main

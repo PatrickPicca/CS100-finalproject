@@ -1,3 +1,5 @@
+#ifndef __SORTCATEGORY_HPP__
+#define __SORTCATEGORY_HPP__
 #include "gtest/gtest.h"
 #include "SortClass.hpp"
 #include "task.hpp"
@@ -228,3 +230,4 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 
+#endif

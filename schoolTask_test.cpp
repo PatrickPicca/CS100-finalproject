@@ -1,3 +1,5 @@
+#ifndef __SCHOOL_TASK_HPP
+#define __SCHOOL_TASK_HPP
 #include "task.hpp"
 #include "gtest/gtest.h"
 #include <string>
@@ -147,3 +149,4 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 
+#endif

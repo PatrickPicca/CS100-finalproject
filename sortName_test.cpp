@@ -1,3 +1,5 @@
+#ifndef __SORTNAME_HPP__
+#define __SORTNAME_HPP__
 #include "SortClass.hpp"
 #include "task.hpp"
 #include <string>
@@ -188,3 +190,4 @@ int main(int argc, char **argv) {
   return RUN_ALL_TESTS();
 }
 
+#endif
