@@ -21,7 +21,7 @@ class Task {
 		int priority;
 	public:
 		Task();
-		Task(string category, string name, string description);
+		Task(string category, string name, string description, int thePrio);
 		//string task_description();
 		void DisplayTask();
 		void SaveTask();

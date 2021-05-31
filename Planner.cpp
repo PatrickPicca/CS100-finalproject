@@ -147,7 +147,7 @@ class Planner
                                 while (i < SortSet.size()){
                                        if(SortSet.at(i).getCategory() == "School"){
 
-                                               	cout << "Task Name: " << BLUE << SortSet.at(i).getName() << RESET << endl;
+                                                cout << "Task Name: " << BLUE << SortSet.at(i).getName() << RESET << endl;
                                                 cout << "Task Category: " << BOLDMAGENTA << SortSet.at(i).getCategory() << RESET << endl;
                                                 cout << "Description: " << GREEN << SortSet.at(i).getDescription() << RESET << endl;
                                                 cout << "Due Date: " << YELLOW << SortSet.at(i).getMonth() << "/" << SortSet.at(i).getDay() << "/" << SortSet.at(i).getYear() << RESET << endl;
@@ -162,9 +162,9 @@ class Planner
                                                 cout << endl;
                                         }
                                         i++;
-				
+
                                 }
-			}
+                        }
                         else
                                 cout << "Planner Empty!" << endl;
                 }
@@ -183,6 +183,7 @@ class Planner
                                 cout << "Planner Empty!" << endl;
                 }
         }
+
 	void Save_Task(){
 		
 	}
@@ -199,11 +200,13 @@ class Planner
 			int i = 0;
 			SortSet.clear();
 			while(!infile.eof()) {
+
 				string name, description, category, priority, day, month, year;
+
 				getline(infile, category, '\n');	
 				getline(infile, name, '\n');	
 				getline(infile, description, '\n');
-				
+	
 				getline(infile, priority, '\n');
 				getline(infile, day, '\n');
 				getline(infile, month, '\n');
@@ -215,10 +218,20 @@ class Planner
 				int theDay = stoi(day);
 				int theMonth = stoi(month);
 				int theYear = stoi(year);
+
+				
+				getline(infile, priority, '\n');
+					
+		
+				string skip;	
+				getline(infile, skip);
+				int theprio = stoi(priority);
+
 	
 				if (category == "School")
 				{
 					
+
 					SortSet.push_back(SchoolTask((string)category, (string)name, description, theprio, theDay, theMonth, theYear));
 				}
 				else if(category == "Personal")
@@ -243,38 +256,38 @@ class Planner
 	}
 	void Write_To_File(){
 		ofstream outFile;
-		outFile.open("Tasks.txt");
-		int i = 0;
-		int size = SortSet.size();
-		while (i < SortSet.size()){
-			if (i == SortSet.size()-1){
-				outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << endl;
-				i++;
-			}
-			else{
-			outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << '\n' <<  endl;
-			i++;
-			}
-		}
-		cout << "Finished Saving Tasks!!" << endl;
-		outFile.close();
-	}
-	void DisplayMenu(){
-		Read_From_File();
-		
-		string input;
-	
-		cout << "Welcome to PlannerPlus. Enter the corresponding number for the following options follwed by [ENTER]." << endl;
-		
-		cout << "1. Create New Task." << endl;
-		cout << "2. Display Existing Task(s)." << endl;
-		cout << "3. Sort or Filter Your Tasks." << endl;
-		cout << "4. Delete a Task." << endl;
-		cout << "5. Edit an Existing Task" << endl;
-		cout << "6. Quit." << endl;
+                outFile.open("Tasks.txt");
+                int i = 0;
+                int size = SortSet.size();
+                while (i < SortSet.size()){
+                        if (i == SortSet.size()-1){
+                                outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << endl;
+                                i++;
+                        }
+                        else{
+                        outFile << SortSet.at(i).getCategory() << "\n" << SortSet.at(i).getName() << "\n" << SortSet.at(i).getDescription() << "\n" << SortSet.at(i).getPriority() << '\n' << SortSet.at(i).getDay() << '\n' << SortSet.at(i).getMonth() << '\n' << SortSet.at(i).getYear() << '\n' <<  endl;
+                        i++;
+                        }
+                }
+                cout << "Finished Saving Tasks!!" << endl;
+                outFile.close();
+        }
+     void DisplayMenu(){
+                Read_From_File();
 
-		cin >> input;
-	
+                string input;
+
+                cout << "Welcome to PlannerPlus. Enter the corresponding number for the following options follwed by [ENTER]." << endl;
+
+                cout << "1. Create New Task." << endl;
+                cout << "2. Display Existing Task(s)." << endl;
+                cout << "3. Sort or Filter Your Tasks." << endl;
+                cout << "4. Delete a Task." << endl;
+                cout << "5. Edit an Existing Task" << endl;
+                cout << "6. Quit." << endl;
+
+                cin >> input;
+
 		if (input == "1") {
 			cout << "What type of task would you like to create? Enter the corresponding number for the following options follwed by [ENTER]." << endl;
 			cout << "1. School Task." << endl;
