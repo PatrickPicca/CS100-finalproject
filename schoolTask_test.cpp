@@ -2,6 +2,7 @@
 #define __SCHOOL_TASK_HPP
 #include "task.hpp"
 #include "gtest/gtest.h"
+#include <string>
 
 
 TEST(schoolTest, nameTest){ 
