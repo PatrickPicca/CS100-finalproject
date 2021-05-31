@@ -1,9 +1,9 @@
-#ifndef __TASK_HPP__
-#define __TASK_HPP__
+#ifndef __PERSONAL_TASK_HPP
+#define __PERSONAL_TASK_HPP
+#include "task.hpp"
 #include "gtest/gtest.h"
 #include <string>
-#include <cstring>
-#include <iostream>
+
 
 
 TEST(personalTest, nameTest){ 
