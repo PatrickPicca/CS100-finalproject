@@ -24,8 +24,7 @@ class SortName : public SortClass
 			Task temp;
 			
 			for (i = 0; i < n; i++){
-				for (j = i +1; j < n; j++){
-					
+				for (j = i +1; j < n; j++){	
 					if (isupper(other.at(i).getName().at(0)) && isupper(other.at(j).getName().at(0))){
 						if ((other.at(i).getName().at(0)+32) > (other.at(j).getName().at(0)+32)){
 							temp = other.at(i);
