@@ -83,7 +83,6 @@ PersonalTask::PersonalTask(string category, string name, string description){
 		cin >> edit_input;
 		while(edit_input != "1" && edit_input!= "2" && edit_input!= "3"){
                                 cout << "Invalid input. Please try again." << endl;
-				//cin.ignore();
                 		cin >> edit_input;
 		}
 		if(edit_input == "1") {
