@@ -59,13 +59,15 @@ class SortCategory : public SortClass
 			std::cout << "How do you wish to filter your tasks by?" << endl;
 			std::cout << "1. School tasks" << endl;
 			std::cout << "2. Personal tasks" << endl;
-				
+			
+			std::cout << "The size of the passed in vect is: " << vect.size() << endl;
+	
 			string category;
 
 			std::cin >> category;
 			vector<Task> tempList;
 	
-
+			std::cout << "About to Filter task objects!" << endl;
 			if (category == "1")
 			{
 				for (int i = 0; i < vect.size(); i++){
@@ -84,7 +86,9 @@ class SortCategory : public SortClass
 				std::cout << "Invalid input!" << endl;
 				Filter(vect);
 			}	
-						
+			
+			//cout << "At the end of the filter function the size of our set is currently: " << tempList.size() << endl; 
+			
 			vect.clear();
 			vect = tempList;
 			tempList.clear();
