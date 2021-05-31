@@ -6,10 +6,14 @@
 using namespace std;
 
 
-PersonalTask::PersonalTask(string category, string name, string description){
+PersonalTask::PersonalTask(string category, string name, string description, int thePrio, int theDay, int theMonth, int theYear){
   	         task_name = name;
         	 task_category = category;
        		 task_description = description;
+		 priority = thePrio;
+		day = theDay;
+		month = theMonth;
+		year = theYear;
 } 
 	void PersonalTask::Add_PersonalTask(){
 		task_category = "Personal";
