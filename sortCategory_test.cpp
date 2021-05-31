@@ -28,6 +28,7 @@ TEST(categoryOrder, simpleTest){
   category = 1; 
   
   EXPECT_EQ(getDay(Sorting(templist), "5");  // should return 5 since sorted by school
+  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
 }
 
 TEST(categoryOrder, invalidTest){  // First task no category entry
@@ -51,8 +52,9 @@ TEST(categoryOrder, invalidTest){  // First task no category entry
   category = 2; 
   
   EXPECT_EQ(getDay(Sorting(templist), "20");  
-
- 
+  EXPECT_EQ(getCategory(Sorting(templist), "Personal"); 
+ }
+            
 TEST(categoryOrder, InvalidTest2){ // Second Task no category entry
   vector<Task> templist;
   
@@ -74,6 +76,7 @@ TEST(categoryOrder, InvalidTest2){ // Second Task no category entry
   category = 1;
   
   EXPECT_EQ(getDay(Sorting(templist), "5"); 
+  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
 }
 
 TEST(categoryOrder, sameCategory){ 
@@ -98,6 +101,7 @@ TEST(categoryOrder, sameCategory){
   category = 1;
   
   EXPECT_EQ(getDay(Sorting(templist), "5"); 
+  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
 }
 
 TEST(categoryOrder, sameCategory2){ // with 3 tasks and latest option
@@ -130,6 +134,7 @@ TEST(categoryOrder, sameCategory2){ // with 3 tasks and latest option
   category = 2;
   
   EXPECT_EQ(getDay(Sorting(templist), "20"); // when same, first task 
+  EXPECT_EQ(getCategory(Sorting(templist), "Personal"); 
 }
 
 TEST(categoryorder, noEntry){  
@@ -150,6 +155,7 @@ TEST(categoryorder, noEntry){
   category = 1;
   
   EXPECT_EQ(getDay(Sorting(templist), ""); 
+  EXPECT_EQ(getCategory(Sorting(templist), ""); 
 }
 
 
@@ -182,10 +188,11 @@ TEST(categoryOrder, sortPersonal){
   
   category = 2;
   
-  EXPECT_EQ(getDay(Sorting(templist), "3") 
+  EXPECT_EQ(getDay(Sorting(templist), "3");
+  EXPECT_EQ(getCategory(Sorting(templist), "Personal"); 
 }
 
-TEST(categoryOrder, sortStudent){ 
+TEST(categoryOrder, sortSchool){ 
   vector<Task> templist;
   
   Task* t1 = new Task();
@@ -214,7 +221,8 @@ TEST(categoryOrder, sortStudent){
   
   category = 1;
   
-  EXPECT_EQ(getDay(Sorting(templist), "10") 
+  EXPECT_EQ(getDay(Sorting(templist), "10");
+  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
 }
 
 int main(int argc, char **argv) {
