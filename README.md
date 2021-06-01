@@ -84,12 +84,11 @@ PlannerPlus will launch and be ready for user input.
  ## Testing
  Our project was tested with both CI and unit tests for our files. We also made sure to create checks for user input, in case an invalid input occurs. In that case, PlannerPlus should prompt the user to try again with a valid input. Our README file does have a “passing badge”. 
  
- The following are screenshots of passing tests:
+ Screenshot of passing tests:
  
- ![image](https://user-images.githubusercontent.com/81607334/120364579-4a3eb680-c2c2-11eb-8cbe-a97913db7c68.png)
- ![image](https://user-images.githubusercontent.com/81607334/120364865-98ec5080-c2c2-11eb-815e-16a170c788b7.png)
- ![image](https://user-images.githubusercontent.com/81607334/120364644-5d518680-c2c2-11eb-8f15-8e5a62bb4e0c.png)
- ![image](https://user-images.githubusercontent.com/81607334/120364661-62163a80-c2c2-11eb-9a28-4afb299479f8.png)
+ ![image](https://user-images.githubusercontent.com/81607334/120365174-f7193380-c2c2-11eb-99cd-e6bddb31e89e.png)
+
+
 
 
  
