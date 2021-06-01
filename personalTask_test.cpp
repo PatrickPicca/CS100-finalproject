@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 
 #include "task.hpp"
-#include "task.cpp"
+//#include "task.cpp"
 
 #include "personal_task.cpp"
 #include "personal_task.hpp"
@@ -151,10 +151,5 @@ TEST(personalTest, editPriority){
   EXPECT_EQ(t1->getPriority(), "3");
 }
 */
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
 
 #endif
