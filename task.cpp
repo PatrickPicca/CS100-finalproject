@@ -1,3 +1,4 @@
+
 #include "task.hpp"
 
 #include <iostream>
@@ -283,7 +284,4 @@ void Task::EditTask(){
 
 
 }
-
-
-
 
