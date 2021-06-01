@@ -67,12 +67,13 @@
  ## Installation/Usage
  To use PlannerPlus, you must first clone this repository onto your platform.
 After obtaining the necessary files, you will need to install CMake in order to run the application.
-The following link gives instructions on how to install CMake, depending on your platform: https://cmake.org/install/
+The following link gives instructions on how to install CMake, depending on your platform:
+> https://cmake.org/install/
 
 Afterwards, paste the following into your command line:
-#cmake3 .
-#make
-#./test
+> cmake3 .
+> make
+> ./test
 PlannerPlus will launch and be ready for user input. 
  ## Testing
  Our project was tested with both CI and unit tests for our files. We also made sure to create checks for user input, in case an invalid input occurs. In that case, PlannerPlus should prompt the user to try again with a valid input. Our README file does have a “passing badge”. 
