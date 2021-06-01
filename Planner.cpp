@@ -12,7 +12,6 @@
 #include <string>
 #include "SortClass.hpp"
 #include "SortCategory.cpp"
-#include "SortDate.cpp"
 #include "SortPriority.cpp"
 #include "SortName.cpp"
 
