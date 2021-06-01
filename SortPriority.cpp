@@ -74,7 +74,7 @@ class SortPriority : public SortClass
 		
 			std::cout << "How do you wish to filter your tasks by?" << endl;
 			std::cout << "1. No priority" << endl;
-			std::cout << "2. Low priority" << endl;
+			std::cout << "2. Relaxed priority" << endl;
 			std::cout << "3. Medium  priority" << endl;
 			std::cout << "4. High priority" << endl;
 							
