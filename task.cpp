@@ -1,3 +1,4 @@
+
 #include "task.hpp"
 
 #include <iostream>
@@ -104,11 +105,9 @@ void Task::EditTask(){
 		
 			cout << "Would you like to further edit " << BLUE << getName() << RESET << "? y/n" << endl;
 			
-                        //cin.ignore();
                         cin >> edit_input;
                         while((edit_input != "y" && edit_input != "n") && (edit_input != "Y" && edit_input != "N")){
                                 cout << "Invalid input. Please try again." << endl;
-                                //cin.ignore();
 				cin >> edit_input;
                         }
                         if(edit_input == "y" || edit_input == "Y"){
@@ -285,7 +284,4 @@ void Task::EditTask(){
 
 
 }
-
-
-
 

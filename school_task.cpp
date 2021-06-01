@@ -10,11 +10,14 @@ using namespace std;
 
 
 
-	SchoolTask::SchoolTask(string category, string name, string description, int thePrio){
+	SchoolTask::SchoolTask(string category, string name, string description, int thePrio, int theDay, int theMonth, int theYear){
   	         task_name = name;
         	 task_category = category;
        		 task_description = description;
 		 priority = thePrio;
+		 day = theDay;
+		month = theMonth;
+		year = theYear;
 } 
 
 	void SchoolTask::Add_SchoolTask(){
@@ -35,7 +38,7 @@ using namespace std;
 		cout << "What day of the month is " << BLUE << getName() << RESET << " due?" << endl;
 		
 		getline(cin, temp);
-		day = std::stoi(temp);
+		day = stoi(temp);
 		while (day < 1 || day > 31){
 			cout << "Invalid input. Please enter a valid day of the month followed by [ENTER]." << endl;
 			getline(cin, temp);
