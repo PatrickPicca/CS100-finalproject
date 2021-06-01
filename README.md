@@ -68,7 +68,8 @@
  To use PlannerPlus, you must first clone this repository onto your platform.
 After obtaining the necessary files, you will need to install CMake in order to run the application.
 The following link gives instructions on how to install CMake, depending on your platform:
-> https://cmake.org/install/
+
+https://cmake.org/install/
 
 Afterwards, paste the following into your command line:
 > cmake3 .
