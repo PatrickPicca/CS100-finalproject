@@ -2,7 +2,7 @@
 #define __SORTCATEGORY_TEST_HPP__
 #include "gtest/gtest.h"
 #include "SortCategory.cpp"
-#include "task.cpp"
+//#include "task.cpp"
 #include "task.hpp"
 #include <vector>
 
@@ -246,11 +246,6 @@ TEST(categoryOrder, sortSCHOOL){
   sort.Sorting(templist);
    EXPECT_EQ(templist.at(0).getDay(), 10);
   EXPECT_EQ(templist.at(0).getCategory(), "School"); 
-}
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
 }
 
 #endif

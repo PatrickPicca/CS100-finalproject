@@ -5,8 +5,8 @@
 
 #include "SortPriority.cpp"
 //#include "SortClass.hpp"
-#include "task.cpp"
-#include "task.hpp"
+//#include "task.cpp"
+ #include "task.hpp"
 #include <vector>
 #include <string>
 #include <cstring>
@@ -248,11 +248,6 @@ TEST(priorityOrder, sortPriorityLOW){ // 3 tasks with latest option
  
   EXPECT_EQ(templist.at(0).getName(), "CS HW");
   EXPECT_EQ(templist.at(0).getPriority(), 2);
-}
-
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
 }
 
 #endif

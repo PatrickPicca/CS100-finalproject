@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 
 #include "SortName.cpp"
-#include "task.cpp"
+//#include "task.cpp"
 #include "task.hpp"
 #include <string>
 #include <vector>
@@ -209,9 +209,4 @@ TEST(nameOrder, sortNames2){
 
   EXPECT_EQ(templist.at(0).getName(), "Astrology HW"); // don't check for 2nd letter so first task should be at front
 }
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
-
 #endif

@@ -3,7 +3,8 @@
 
 #include "gtest/gtest.h"
 
-//#include "task.hpp"
+#include "task.hpp"
+
 //#include "task.cpp"
 
 #include "school_task.cpp"
@@ -150,9 +151,5 @@ TEST(schoolTest, editPriority){
   EXPECT_EQ(t1->getPriority(), "3");
 }
 */
-int main(int argc, char **argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}
 
 #endif
