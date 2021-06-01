@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 
 #include "sortPriority_test.cpp"
 #include "sortName_test.cpp"
