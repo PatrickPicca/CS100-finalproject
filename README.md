@@ -25,28 +25,11 @@
 
 
 
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
+
 ## Class Diagram
 ![Untitled Diagram-2-2](https://user-images.githubusercontent.com/81607334/120364446-1b284500-c2c2-11eb-81dd-e6bb4dc98166.png)
 
 
- > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
 
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
@@ -95,10 +78,18 @@ cmake3 .
 
 make
 
-./test
+./tests
 
 PlannerPlus will launch and be ready for user input. 
  ## Testing
  Our project was tested with both CI and unit tests for our files. We also made sure to create checks for user input, in case an invalid input occurs. In that case, PlannerPlus should prompt the user to try again with a valid input. Our README file does have a “passing badge”. 
+ 
+ The following are screenshots of passing tests:
+ 
+ ![image](https://user-images.githubusercontent.com/81607334/120364579-4a3eb680-c2c2-11eb-8cbe-a97913db7c68.png)
+ ![image](https://user-images.githubusercontent.com/81607334/120364614-54f94b80-c2c2-11eb-9e4e-b8f594bb8d5b.png)
+ ![image](https://user-images.githubusercontent.com/81607334/120364644-5d518680-c2c2-11eb-8f15-8e5a62bb4e0c.png)
+ ![image](https://user-images.githubusercontent.com/81607334/120364661-62163a80-c2c2-11eb-9a28-4afb299479f8.png)
+
 
  
