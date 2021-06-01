@@ -1,228 +1,251 @@
-#ifndef __SORTCATEGORY_HPP__
-#define __SORTCATEGORY_HPP__
+#ifndef __SORTCATEGORY_TEST_HPP__
+#define __SORTCATEGORY_TEST_HPP__
 #include "gtest/gtest.h"
-#include "SortClass.hpp"
+#include "SortCategory.cpp"
+#include "task.cpp"
 #include "task.hpp"
 #include <vector>
 
 
-TEST(categoryOrder, simpleTest){ 
+TEST(categoryOrder, simpleTestSCHOOL){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setCategory("School");
-  t1->setMonth(6);
-  t1->setDay(5);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setCategory("School");
+  t1.setMonth(6);
+  t1.setDay(5);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setCategory("Personal");
-  t2->setMonth(6);
-  t2->setDay(20);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 =  Task();
+  t2.setName("CS HW");
+  t2.setCategory("Personal");
+  t2.setMonth(6);
+  t2.setDay(20);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  category = 1; 
+   SortCategory sort;
+  sort.Sorting(templist);
+ // category = 1; 
   
-  EXPECT_EQ(getDay(Sorting(templist), "5");  // should return 5 since sorted by school
-  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
+  EXPECT_EQ(templist.at(0).getDay(), 5);
+  EXPECT_EQ(templist.at(0).getCategory(), "School");
 }
 
-TEST(categoryOrder, invalidTest){  // First task no category entry
+TEST(categoryOrder, invalidTestPERSONAL){  // First task no category entry
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setMonth(6);
-  t1->setDay(5);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setMonth(6);
+  t1.setDay(5);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setCategory("Personal");
-  t2->setMonth(6);
-  t2->setDay(20);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("CS HW");
+  t2.setCategory("Personal");
+  t2.setMonth(6);
+  t2.setDay(20);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  category = 2; 
-  
-  EXPECT_EQ(getDay(Sorting(templist), "20");  
-  EXPECT_EQ(getCategory(Sorting(templist), "Personal"); 
+ // category = 2; 
+ SortCategory sort;
+  sort.Sorting(templist);
+ 
+  EXPECT_EQ(templist.at(0).getDay(), 20);
+  EXPECT_EQ(templist.at(0).getCategory(), "Personal"); 
  }
             
-TEST(categoryOrder, InvalidTest2){ // Second Task no category entry
+TEST(categoryOrder, InvalidTest2SCHOOL){ // Second Task no category entry
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setCategory("School");
-  t1->setMonth(6);
-  t1->setDay(5);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setCategory("School");
+  t1.setMonth(6);
+  t1.setDay(5);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setMonth(6);
-  t2->setDay(20);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("CS HW");
+  t2.setMonth(6);
+  t2.setDay(20);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  category = 1;
+   // category = 1;
+  SortCategory sort;
+  sort.Sorting(templist);
   
-  EXPECT_EQ(getDay(Sorting(templist), "5"); 
-  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
+
+  EXPECT_EQ(templist.at(0).getDay(), 5);
+  EXPECT_EQ(templist.at(0).getCategory(), "School"); 
 }
 
-TEST(categoryOrder, sameCategory){ 
+TEST(categoryOrder, sameCategorySCHOOL){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setCategory("School");
-  t1->setMonth(6);
-  t1->setDay(5);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setCategory("School");
+  t1.setMonth(6);
+  t1.setDay(6);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setCategory("School");
-  t2->setMonth(6);
-  t2->setDay(20);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 =  Task();
+  t2.setName("CS HW");
+  t2.setCategory("School");
+  t2.setMonth(6);
+  t2.setDay(20);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  category = 1;
+ // category = 1;
+  SortCategory sort;
+  sort.Sorting(templist);
   
-  EXPECT_EQ(getDay(Sorting(templist), "5"); 
-  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
+EXPECT_EQ(templist.at(0).getDay(), 6);
+  EXPECT_EQ(templist.at(0).getCategory(), "School"); 
 }
 
-TEST(categoryOrder, sameCategory2){ // with 3 tasks and latest option
+TEST(categoryOrder, sameCategory2PERSONAL){ // with 3 tasks and latest option
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setCategory("Personal");
-  t1->setMonth(6);
-  t1->setDay(20);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setCategory("Personal");
+  t1.setMonth(6);
+  t1.setDay(20);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setCategory("Personal");
-  t2->setMonth(6);
-  t2->setDay(2);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("CS HW");
+  t2.setCategory("Personal");
+  t2.setMonth(6);
+  t2.setDay(2);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  Task* t3 = new Task();
-  t3->setName("Math HW");
-  t3->setCategory("Personal");
-  t3->setMonth(6);
-  t3->setDay(1);
-  t3-setYear(2021);
-  templist.pushback(t3);
+  Task t3 = Task();
+  t3.setName("Math HW");
+  t3.setCategory("Personal");
+  t3.setMonth(6);
+  t3.setDay(1);
+  t3.setYear(2021);
+  templist.push_back(t3);
   
-  category = 2;
+ // category = 2;
+  SortCategory sort;
+  sort.Sorting(templist);
   
-  EXPECT_EQ(getDay(Sorting(templist), "20"); // when same, first task 
-  EXPECT_EQ(getCategory(Sorting(templist), "Personal"); 
+  EXPECT_EQ(templist.at(0).getDay(), 20);
+  EXPECT_EQ(templist.at(0).getCategory(), "Personal"); 
 }
 
-TEST(categoryorder, noEntry){  
+TEST(categoryorder, noEntrySCHOOL){  
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setCategory("");
+  t1.setDay(0);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("CS HW");
+  t2.setCategory("");
+  t2.setDay(0); 
+templist.push_back(t2);
   
-  Task* t3 = new Task();
-  t3->setName("Math HW");
-  templist.pushback(t3);
+  Task t3 = Task();
+  t3.setName("Math HW");
+  t3.setCategory("");
+  t3.setDay(0);
+  templist.push_back(t3);
   
-  category = 1;
-  
-  EXPECT_EQ(getDay(Sorting(templist), ""); 
-  EXPECT_EQ(getCategory(Sorting(templist), ""); 
+ // category = 1;
+  SortCategory sort;
+  sort.Sorting(templist);
+
+  EXPECT_EQ(templist.at(0).getDay(), 0);
+  EXPECT_EQ(templist.at(0).getCategory(), "");
 }
 
 
-TEST(categoryOrder, sortPersonal){ 
+TEST(categoryOrder, sortPERSONAL){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setCategory("School");
-  t1->setMonth(6);
-  t1->setDay(1);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setCategory("School");
+  t1.setMonth(6);
+  t1.setDay(1);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setCategory("School");
-  t2->setMonth(6);
-  t2->setDay(2);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 =  Task();
+  t2.setName("CS HW");
+  t2.setCategory("School");
+  t2.setMonth(6);
+  t2.setDay(2);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  Task* t3 = new Task();
-  t3->setName("Math HW");
-  t3->setCategory("Personal");
-  t3->setMonth(6);
-  t3->setDay(3);
-  t3-setYear(2021);
-  templist.pushback(t3);
+  Task t3 =  Task();
+  t3.setName("Math HW");
+  t3.setCategory("Personal");
+  t3.setMonth(6);
+  t3.setDay(3);
+  t3.setYear(2021);
+  templist.push_back(t3);
   
-  category = 2;
+ // category = 2;
+  SortCategory sort;
+  sort.Sorting(templist);
   
-  EXPECT_EQ(getDay(Sorting(templist), "3");
-  EXPECT_EQ(getCategory(Sorting(templist), "Personal"); 
+   EXPECT_EQ(templist.at(0).getDay(), 3);
+  EXPECT_EQ(templist.at(0).getCategory(), "Personal"); 
 }
 
-TEST(categoryOrder, sortSchool){ 
+TEST(categoryOrder, sortSCHOOL){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setCategory("School");
-  t1->setMonth(6);
-  t1->setDay(10);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 =  Task();
+  t1.setName("Hist HW");
+  t1.setCategory("School");
+  t1.setMonth(6);
+  t1.setDay(10);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setCategory("Personal");
-  t2->setMonth(6);
-  t2->setDay(2);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("CS HW");
+  t2.setCategory("Personal");
+  t2.setMonth(6);
+  t2.setDay(2);
+  t2.setYear(2021);
+  templist.push_back(t2);
+ 
+  Task t3 = Task();
+  t3.setName("Math HW");
+  t3.setCategory("Personal");
+  t3.setMonth(6);
+  t3.setDay(3);
+  t3.setYear(2021);
+  templist.push_back(t3);
   
-  Task* t3 = new Task();
-  t3->setName("Math HW");
-  t3->setCategory("Personal");
-  t3->setMonth(6);
-  t3->setDay(3);
-  t3-setYear(2021);
-  templist.pushback(t3);
-  
-  category = 1;
-  
-  EXPECT_EQ(getDay(Sorting(templist), "10");
-  EXPECT_EQ(getCategory(Sorting(templist), "School"); 
+   // category = 1;
+  SortCategory sort;
+  sort.Sorting(templist);
+   EXPECT_EQ(templist.at(0).getDay(), 10);
+  EXPECT_EQ(templist.at(0).getCategory(), "School"); 
 }
 
 int main(int argc, char **argv) {

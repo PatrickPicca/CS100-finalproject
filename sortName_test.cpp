@@ -1,190 +1,214 @@
-#ifndef __SORTNAME_HPP__
-#define __SORTNAME_HPP__
-#include "SortClass.hpp"
+#ifndef __SORTNAME_TEST_HPP__
+#define __SORTNAME_TEST_HPP__
+
+#include "gtest/gtest.h"
+
+#include "SortName.cpp"
+#include "task.cpp"
 #include "task.hpp"
 #include <string>
 #include <vector>
-#include "gtest/gtest.h"
 
 
 TEST(nameOrder, simpleTest){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Bio HW");
-  t1->setMonth(6);
-  t1->setDay(5);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 =  Task();
+  t1.setName("Bio HW");
+  t1.setMonth(6);
+  t1.setDay(5);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setMonth(6);
-  t2->setDay(20);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("CS HW");
+  t2.setMonth(6);
+  t2.setDay(20);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  EXPECT_EQ(getName(Sorting(templist), "Bio HW");
+  SortName sort;
+  sort.Sorting(templist);
+
+
+  EXPECT_EQ(templist.at(0).getName(), "Bio HW");
 }
 
-TEST(nameOrder, InvalidTest1){ // First task empty
+TEST(nameOrder, IncompleteTaskname1){
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("");
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("d");
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setMonth(6);
-  t2->setDay(20);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 =  Task();
+  t2.setName("CS HW");
+  t2.setMonth(6);
+  t2.setDay(20);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  EXPECT_EQ(getName(Sorting(templist), "CS HW");
+  SortName sort;
+  sort.Sorting(templist);
+
+  EXPECT_EQ(templist.at(1).getName(), "d");
 }
 
  
-TEST(nameOrder, InvalidTest2){ // Second Task empty
-  vector<Task> templist;
-  
-  Task* t1 = new Task();
-  t1->setName("Zoology HW");
-  t1->setMonth(6);
-  t1->setDay(5);
-  t1-setYear(2021);
-  templist.pushback(t1);
+TEST(nameOrder, IncompleteTaskname2){
+  vector<Task> templist;  
+  Task t1 = Task();
+  t1.setName("Zoology HW");
+  t1.setMonth(6);
+  t1.setDay(5);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("");
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("lec");
+  templist.push_back(t2);
   
-  EXPECT_EQ(getName(Sorting(templist), "Zoology HW");
+  SortName sort;
+  sort.Sorting(templist);
+
+  EXPECT_EQ(templist.at(0).getName(), "lec");
 }
 
 TEST(nameOrder, sameName){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("CS HW");
-  t1->setMonth(6);
-  t1->setDay(5);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 =  Task();
+  t1.setName("CS HW");
+  t1.setMonth(6);
+  t1.setDay(5);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("CS HW");
-  t2->setMonth(6);
-  t2->setDay(5);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 =  Task();
+  t2.setName("CS HW");
+  t2.setMonth(6);
+  t2.setDay(5);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  EXPECT_EQ(getDay(Sorting(templist), "5"); //first task inputted 
-  EXPECT_EQ(getName(Sorting(templist), "Zoology HW");
-       
+  SortName sort;
+  sort.Sorting(templist);
+
+  EXPECT_EQ(templist.at(0).getName(), "CS HW");
+  EXPECT_EQ(templist.at(0).getDay(), 5);      
 }
 
 TEST(nameOrder, sameName2){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("ENG HW");
-  t1->setMonth(6);
-  t1->setDay(20);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("ENG HW");
+  t1.setMonth(6);
+  t1.setDay(20);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("ENG HW");
-  t2->setMonth(6);
-  t2->setDay(21);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("ENG HW");
+  t2.setMonth(6);
+  t2.setDay(21);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  Task* t3 = new Task();
-  t3->setName("ENG HW");
-  t3->setMonth(6);
-  t3->setDay(2);
-  t3-setYear(2021);
-  templist.pushback(t3);
-  
-  EXPECT_EQ(getDay(Sorting(templist), "20");
-  EXPECT_EQ(getName(Sorting(templist), "ENG HW");
+  Task t3 = Task();
+  t3.setName("ENG HW");
+  t3.setMonth(6);
+  t3.setDay(2);
+  t3.setYear(2021);
+  templist.push_back(t3);
+ 
+  SortName sort;
+  sort.Sorting(templist);
+ 
+  EXPECT_EQ(templist.at(0).getName(), "ENG HW");
+  EXPECT_EQ(templist.at(0).getDay(), 20); 
 }
 
-TEST(nameOrder, noEntry){  
+TEST(nameOrder, ABC){  
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("");
-  templist.pushback(t1);
+  Task t1 =  Task();
+  t1.setName("B");
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("");
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("A");
+  templist.push_back(t2);
   
-  Task* t3 = new Task();
-  t3->setName("");
-  templist.pushback(t3);
-  
-  EXPECT_EQ(getName(Sorting(templist), "");
+  Task t3 =  Task();
+  t3.setName("C");
+  templist.push_back(t3);
+ 
+  SortName sort;
+  sort.Sorting(templist);
+
+  EXPECT_EQ(templist.at(0).getName(), "A"); 
 }
 
-
-TEST(nameOrder, sortNames1){ 
+TEST(nameOrder, notSortedTest){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Hist HW");
-  t1->setMonth(6);
-  t1->setDay(1);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Hist HW");
+  t1.setMonth(6);
+  t1.setDay(1);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("Aero HW");
-  t2->setMonth(6);
-  t2->setDay(2);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 = Task();
+  t2.setName("Aero HW");
+  t2.setMonth(6);
+  t2.setDay(2);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  Task* t3 = new Task();
-  t3->setName("Math HW");
-  t3->setMonth(6);
-  t3->setDay(3);
-  t3-setYear(2021);
-  templist.pushback(t3);
+  Task t3 = Task();
+  t3.setName("Math HW");
+  t3.setMonth(6);
+  t3.setDay(3);
+  t3.setYear(2021);
+  templist.push_back(t3);
   
-  EXPECT_EQ(getName(Sorting(templist), "Aero HW");
+//  SortName *sort;
+//  sort->Sorting(templist);
+
+  EXPECT_EQ(templist.at(0).getName(), "Hist HW");
 }
 
 TEST(nameOrder, sortNames2){ 
   vector<Task> templist;
   
-  Task* t1 = new Task();
-  t1->setName("Astrology HW);
-  t1->setMonth(6);
-  t1->setDay(1);
-  t1-setYear(2021);
-  templist.pushback(t1);
+  Task t1 = Task();
+  t1.setName("Astrology HW");
+  t1.setMonth(6);
+  t1.setDay(1);
+  t1.setYear(2021);
+  templist.push_back(t1);
 
-  Task* t2 = new Task();
-  t2->setName("Accounting HW);
-  t2->setMonth(6);
-  t2->setDay(2);
-  t2-setYear(2021);
-  templist.pushback(t2);
+  Task t2 =  Task();
+  t2.setName("Accounting HW");
+  t2.setMonth(6);
+  t2.setDay(2);
+  t2.setYear(2021);
+  templist.push_back(t2);
   
-  Task* t3 = new Task();
-  t3->setName("Aerospace HW");
-  t3->setMonth(6);
-  t3->setDay(3);
-  t3-setYear(2021);
-  templist.pushback(t3);
+  Task t3 =  Task();
+  t3.setName("Aerospace HW");
+  t3.setMonth(6);
+  t3.setDay(3);
+  t3.setYear(2021);
+  templist.push_back(t3);
   
-  EXPECT_EQ(getName(Sorting(templist), "Accounting HW");
+  SortName sort;
+  sort.Sorting(templist);
+
+  EXPECT_EQ(templist.at(0).getName(), "Astrology HW"); // don't check for 2nd letter so first task should be at front
 }
-
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();

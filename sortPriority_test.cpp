@@ -12,7 +12,7 @@
 #include <cstring>
 
 
-TEST(priorityOrder, simpleTest){ 
+TEST(priorityOrder, simpleTestHIGH){ 
   vector<Task> templist; 
   Task t1 =  Task();
   t1.setName("Hist HW");
@@ -30,8 +30,8 @@ TEST(priorityOrder, simpleTest){
   t2.setYear(2021);
   templist.push_back(t2);
    
-  SortPriority *sort;
-  sort->Sorting(templist);
+  SortPriority sort;
+  sort.Sorting(templist);
   
   int input = 3;
   
@@ -39,7 +39,7 @@ TEST(priorityOrder, simpleTest){
   EXPECT_EQ(templist.at(0).getPriority(), 3);
 }
 
-TEST(priorityOrder, InvalidTest1){ // First task empty
+TEST(priorityOrder, InvalidTest1HIGH){ // First task empty
   vector<Task> templist;
   
   Task t1 = Task();
@@ -59,12 +59,15 @@ TEST(priorityOrder, InvalidTest1){ // First task empty
   
   int input = 3;
   
+  SortPriority sort;
+  sort.Sorting(templist);
+
   EXPECT_EQ(templist.at(0).getName(), "CS HW");
   EXPECT_EQ(templist.at(0).getPriority(), 2);
 }
 
  
-TEST(priorityOrder, InvalidTest2){ // Second Task empty
+TEST(priorityOrder, InvalidTest2HIGH){ // Second Task empty
   vector<Task> templist;
  
   Task t1 =  Task();
@@ -83,12 +86,14 @@ TEST(priorityOrder, InvalidTest2){ // Second Task empty
   templist.push_back(t2);
   
  int  input = 3;
+SortPriority sort;
+  sort.Sorting(templist);
   
   EXPECT_EQ(templist.at(0).getName(), "Hist HW");
   EXPECT_EQ(templist.at(0).getPriority(), 1);
 }
 
-TEST(priorityOrder, samePriority1){ 
+TEST(priorityOrder, samePriorityLOW){ 
   vector<Task> templist;
   
   Task t1 = Task();
@@ -108,13 +113,15 @@ TEST(priorityOrder, samePriority1){
   templist.push_back(t2);
   
  int  input = 1;
+SortPriority sort;
+  sort.Sorting(templist);
   
   
   EXPECT_EQ(templist.at(0).getName(), "Hist HW"); // since first task, priority matches
   EXPECT_EQ(templist.at(0).getPriority(), 1);
 }
 
-TEST(priorityOrder, samePriority2){ 
+TEST(priorityOrder, samePriorityHIGH){ 
   vector<Task> templist;
   
   Task t1 =  Task();
@@ -141,14 +148,15 @@ TEST(priorityOrder, samePriority2){
   t3.setYear(2021);
   templist.push_back(t3);
   
-  int input = 1;
-  
+  int input = 3;
+SortPriority sort;
+  sort.Sorting(templist);  
   
   EXPECT_EQ(templist.at(0).getName(), "Hist HW"); //priority doesn't match
   EXPECT_EQ(templist.at(0).getPriority(), 3);
 }
 
-TEST(priorityOrder, noEntry){  
+TEST(priorityOrder, noEntryHIGH){  
   vector<Task> templist;
   
   Task t1 = Task();
@@ -164,14 +172,15 @@ TEST(priorityOrder, noEntry){
   templist.push_back(t3);
   
   int input = 3;
-  
+ SortPriority sort;
+  sort.Sorting(templist); 
   
   EXPECT_EQ(templist.at(0).getName(), "Hist HW");
   EXPECT_EQ(templist.at(0).getPriority(), 0);
 }
 
 
-TEST(priorityOrder, sortPriority){ 
+TEST(priorityOrder, sortPriorityHIGH){ 
   vector<Task> templist;
   
   Task t1 = Task();
@@ -199,13 +208,14 @@ TEST(priorityOrder, sortPriority){
   templist.push_back(t3);
   
   int input = 3;
-  
+ SortPriority sort;
+  sort.Sorting(templist); 
   
   EXPECT_EQ(templist.at(0).getName(), "Math HW");
   EXPECT_EQ(templist.at(0).getPriority(), 3);
 }
 
-TEST(priorityOrder, sortPriority2){ // 3 tasks with latest option
+TEST(priorityOrder, sortPriorityLOW){ // 3 tasks with latest option
   vector<Task> templist;
   
   Task t1 = Task();
@@ -232,10 +242,12 @@ TEST(priorityOrder, sortPriority2){ // 3 tasks with latest option
   t3.setYear(2021);
   templist.push_back(t3);
   
-  int input = 1;
-  
-  EXPECT_EQ(templist.at(0).getName(), "Hist HW");
-  EXPECT_EQ(templist.at(0).getPriority(), 3);
+ // int input = 1;
+ SortPriority sort;
+  sort.Sorting(templist);
+ 
+  EXPECT_EQ(templist.at(0).getName(), "CS HW");
+  EXPECT_EQ(templist.at(0).getPriority(), 2);
 }
 
 int main(int argc, char **argv) {
