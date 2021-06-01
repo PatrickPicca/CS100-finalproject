@@ -58,20 +58,20 @@ TEST(nameOrder, IncompleteTaskname1){
 TEST(nameOrder, IncompleteTaskname2){
   vector<Task> templist;  
   Task t1 = Task();
-  t1.setName("Zoology HW");
+  t1.setName("Geo HW");
   t1.setMonth(6);
   t1.setDay(5);
   t1.setYear(2021);
   templist.push_back(t1);
 
   Task t2 = Task();
-  t2.setName("lec");
+  t2.setName("zo");
   templist.push_back(t2);
   
   SortName sort;
   sort.Sorting(templist);
 
-  EXPECT_EQ(templist.at(0).getName(), "lec");
+  EXPECT_EQ(templist.at(0).getName(), "Geo HW");
 }
 
 TEST(nameOrder, sameName){ 
