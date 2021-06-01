@@ -9,6 +9,7 @@
 #include <cstring>
 #include <cctype>
 
+using namespace std;
 
 class SortName : public SortClass
 {
@@ -89,9 +90,13 @@ class SortName : public SortClass
 			vector<Task> tempList;
 
 			for (int i = 0; i < vect.size(); i++){	
-				if (vect.at(i).getName().find(input) != std::string::npos)
+				if (vect.at(i).getName().find(input) != std::string::npos){
 					tempList.push_back(vect[i]);
-				
+				}
+				else {
+					cout << "Keyword not found. Returning to Main Menu." << endl << endl;
+					break;
+				}
 			}			
 						
 			vect.clear();
