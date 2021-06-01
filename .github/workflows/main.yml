@@ -29,7 +29,7 @@ jobs:
         with:
             submodules: recursive
       - name: Build CMake
-        run: cmake3 .
+        run: cmake .
       
       - name: Make
         run: make
