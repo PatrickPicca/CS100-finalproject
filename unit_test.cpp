@@ -2,7 +2,7 @@
 
 #include "sortPriority_test.cpp"
 #include "sortName_test.cpp"
-#include "sortDate_test.cpp"
+
 #include "sortCategory_test.cpp"
 #include "task_test.cpp"
 #include "personalTask_test.cpp"
