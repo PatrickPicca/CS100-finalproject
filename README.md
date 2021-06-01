@@ -64,6 +64,11 @@
  
  ## Screenshots
  > Screenshots of the input/output after running your application
+ ![Screen Shot 2021-05-31 at 7 23 25 PM](https://user-images.githubusercontent.com/81607334/120348970-89650b80-c2b2-11eb-8619-fd7f688aa981.png)
+ ![Screen Shot 2021-05-31 at 7 23 45 PM](https://user-images.githubusercontent.com/81607334/120348999-908c1980-c2b2-11eb-95f8-587464589892.png)
+ ![Screen Shot 2021-05-31 at 7 24 39 PM](https://user-images.githubusercontent.com/81607334/120349031-984bbe00-c2b2-11eb-8d15-04d8073d8a3c.png)
+ ![Screen Shot 2021-05-31 at 7 24 52 PM](https://user-images.githubusercontent.com/81607334/120349063-9eda3580-c2b2-11eb-9095-bc87c86ce5a9.png)
+ 
  ## Installation/Usage
  To use PlannerPlus, you must first clone this repository onto your platform.
 After obtaining the necessary files, you will need to install CMake in order to run the application.
