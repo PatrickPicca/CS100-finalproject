@@ -87,7 +87,7 @@ PlannerPlus will launch and be ready for user input.
  The following are screenshots of passing tests:
  
  ![image](https://user-images.githubusercontent.com/81607334/120364579-4a3eb680-c2c2-11eb-8cbe-a97913db7c68.png)
- ![image](https://user-images.githubusercontent.com/81607334/120364614-54f94b80-c2c2-11eb-9e4e-b8f594bb8d5b.png)
+ ![image](https://user-images.githubusercontent.com/81607334/120364865-98ec5080-c2c2-11eb-815e-16a170c788b7.png)
  ![image](https://user-images.githubusercontent.com/81607334/120364644-5d518680-c2c2-11eb-8f15-8e5a62bb4e0c.png)
  ![image](https://user-images.githubusercontent.com/81607334/120364661-62163a80-c2c2-11eb-9a28-4afb299479f8.png)
 
