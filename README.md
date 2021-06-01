@@ -57,11 +57,30 @@
  ## Screenshots
  The following are screenshots of the input/output after running PlannerPLUS:
  
+ Creating a school task:
  
  ![Screen Shot 2021-05-31 at 7 23 25 PM](https://user-images.githubusercontent.com/81607334/120348970-89650b80-c2b2-11eb-8619-fd7f688aa981.png)
+ 
+ Creating a personal task:
+ 
  ![Screen Shot 2021-05-31 at 7 23 45 PM](https://user-images.githubusercontent.com/81607334/120348999-908c1980-c2b2-11eb-95f8-587464589892.png)
+ 
+ Editing a task:
+ 
  ![Screen Shot 2021-05-31 at 7 24 39 PM](https://user-images.githubusercontent.com/81607334/120349031-984bbe00-c2b2-11eb-8d15-04d8073d8a3c.png)
+ 
+ Displaying Planner:
+ 
  ![Screen Shot 2021-05-31 at 7 24 52 PM](https://user-images.githubusercontent.com/81607334/120349063-9eda3580-c2b2-11eb-9095-bc87c86ce5a9.png)
+ 
+ Sorting by highest priority:
+ 
+ ![Screen Shot 2021-06-01 at 8 32 21 AM](https://user-images.githubusercontent.com/81607334/120350988-515ec800-c2b4-11eb-9fbe-57d54b581dbd.png)
+ 
+ Filtering to only display personal tasks:
+ 
+ ![Screen Shot 2021-06-01 at 8 32 38 AM](https://user-images.githubusercontent.com/81607334/120351072-650a2e80-c2b4-11eb-976d-6d83f4492f3b.png)
+
  
  ## Installation/Usage
  To use PlannerPlus, you must first clone this repository onto your platform.
