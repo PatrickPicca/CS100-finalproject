@@ -76,6 +76,7 @@ Afterwards, paste the following into your command line:
 cmake3 .
 
 make
+
 ./test
 
 PlannerPlus will launch and be ready for user input. 
