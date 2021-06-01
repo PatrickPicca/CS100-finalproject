@@ -8,6 +8,8 @@
  
  Sri Harshit Doddapaneni https://github.com/Harshi6  
  
+ William Picca https://github.com/PatrickPicca
+ 
 ## Project Description
 
  * The implementation of a task scheduler helps us apply our knowledge of these design patterns as well as present a world use outside of the classroom setting. 
